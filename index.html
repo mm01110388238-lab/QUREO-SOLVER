@@ -198,7 +198,7 @@
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
                             <!-- Programming Platform (Qureo) -->
                             <label class="cursor-pointer">
-                                <input type="radio" name="platform" value="منصة البرمجة (Qureo)" class="sr-only platform-radio" checked>
+                                <input type="radio" name="platform" value="منصة البرمجة (Qureo)" data-price="50" onchange="updatePriceDisplay(50)" class="sr-only platform-radio" checked>
                                 <div class="p-4 rounded-2xl border border-slate-800 bg-slate-900/60 hover:bg-slate-800/50 transition-all h-full flex flex-col justify-between">
                                     <div class="flex items-center justify-between mb-3">
                                         <span class="w-10 h-10 rounded-xl bg-cyan-500/15 text-cyan-400 flex items-center justify-center text-lg">
@@ -215,7 +215,7 @@
 
                             <!-- Financial Literacy Platform -->
                             <label class="cursor-pointer">
-                                <input type="radio" name="platform" value="منصة الثقافة المالية" class="sr-only platform-radio">
+                                <input type="radio" name="platform" value="منصة الثقافة المالية" data-price="50" onchange="updatePriceDisplay(50)" class="sr-only platform-radio">
                                 <div class="p-4 rounded-2xl border border-slate-800 bg-slate-900/60 hover:bg-slate-800/50 transition-all h-full flex flex-col justify-between">
                                     <div class="flex items-center justify-between mb-3">
                                         <span class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center text-lg">
@@ -230,9 +230,9 @@
                                 </div>
                             </label>
 
-                            <!-- Both Platforms Package Special Offer -->
+                            <!-- Both Platforms Package Special Offer (70 EGP) -->
                             <label class="cursor-pointer">
-                                <input type="radio" name="platform" value="الباقة الشاملة (البرمجة + الثقافة المالية)" class="sr-only platform-radio">
+                                <input type="radio" name="platform" value="الباقة الشاملة (البرمجة + الثقافة المالية)" data-price="70" onchange="updatePriceDisplay(70)" class="sr-only platform-radio">
                                 <div class="p-4 rounded-2xl border border-slate-800 bg-slate-900/60 hover:bg-slate-800/50 transition-all h-full flex flex-col justify-between relative overflow-hidden">
                                     <div class="flex items-center justify-between mb-3">
                                         <span class="w-10 h-10 rounded-xl bg-purple-500/15 text-purple-400 flex items-center justify-center text-lg">
@@ -240,12 +240,12 @@
                                         </span>
                                         <div class="text-left">
                                             <span class="line-through text-[11px] text-rose-400 font-mono block">100 ج</span>
-                                            <span class="text-xs font-black text-amber-300 font-mono bg-amber-500/20 px-2 py-0.5 rounded border border-amber-500/30">50 جنيه بس!</span>
+                                            <span class="text-xs font-black text-amber-300 font-mono bg-amber-500/20 px-2 py-0.5 rounded border border-amber-500/30">70 جنيه بس!</span>
                                         </div>
                                     </div>
                                     <div>
                                         <h4 class="font-bold text-white text-sm">المنصتين معاً 🔥</h4>
-                                        <p class="text-xs text-amber-200/80 mt-1 font-semibold">عرض خاص: المنصتين معاً بنفس سعر منصة واحدة!</p>
+                                        <p class="text-xs text-amber-200/80 mt-1 font-semibold">عرض خاص: تقفيل المنصتين معاً بـ 70 جنيه بدلاً من 100!</p>
                                     </div>
                                 </div>
                             </label>
@@ -337,7 +337,7 @@
                             <span class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 font-black flex items-center justify-center text-sm border border-emerald-500/30">3</span>
                             <div>
                                 <h3 class="text-lg font-bold text-white">الدفع ورفع إيصال التحويل</h3>
-                                <p class="text-xs text-slate-400">حوّل مبلغ (50 جنيه) على إحدى المحافظ التالية:</p>
+                                <p id="paymentStepSubtitle" class="text-xs text-slate-400">حوّل مبلغ (50 جنيه) على إحدى المحافظ التالية:</p>
                             </div>
                         </div>
 
@@ -355,7 +355,7 @@
                                             <div>
                                                 <div class="flex items-center gap-2">
                                                     <span class="font-bold text-white text-sm">اتصالات كاش</span>
-                                                    <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">50 ج</span>
+                                                    <span id="etisalatPriceTag" class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">50 ج</span>
                                                 </div>
                                                 <p class="font-mono text-base sm:text-lg font-black text-emerald-400 tracking-wider mt-0.5" dir="ltr">01110388238</p>
                                             </div>
@@ -381,7 +381,7 @@
                                             <div>
                                                 <div class="flex items-center gap-2">
                                                     <span class="font-bold text-white text-sm">أورانج كاش</span>
-                                                    <span class="text-[10px] px-2 py-0.5 rounded bg-orange-500/20 text-orange-300 font-bold">50 ج</span>
+                                                    <span id="orangePriceTag" class="text-[10px] px-2 py-0.5 rounded bg-orange-500/20 text-orange-300 font-bold">50 ج</span>
                                                 </div>
                                                 <p class="font-mono text-base sm:text-lg font-black text-orange-400 tracking-wider mt-0.5" dir="ltr">01226657164</p>
                                             </div>
@@ -736,6 +736,7 @@
         let currentAdminPin = localStorage.getItem('qs_admin_pin') || "2026";
         let currentAdminFilter = "all";
         let communityWhatsAppUrl = localStorage.getItem('qs_community_url') || "";
+        let selectedPackagePrice = 50;
 
         let pendingModalOrderId = null;
         let pendingModalNewStatus = null;
@@ -755,6 +756,14 @@
             } else if (document.getElementById('tab-admin-panel') && !document.getElementById('tab-admin-panel').classList.contains('hidden')) {
                 switchTab('new-order');
             }
+        }
+
+        // Dynamic Price Display Update (50 EGP or 70 EGP)
+        function updatePriceDisplay(price) {
+            selectedPackagePrice = price;
+            document.getElementById('paymentStepSubtitle').textContent = `حوّل مبلغ (${price} جنيه) على إحدى المحافظ التالية:`;
+            document.getElementById('etisalatPriceTag').textContent = `${price} ج`;
+            document.getElementById('orangePriceTag').textContent = `${price} ج`;
         }
 
         // WhatsApp Community URL Handling
@@ -944,7 +953,9 @@
 
             requestNotificationPermission();
 
-            const platform = document.querySelector('input[name="platform"]:checked').value;
+            const selectedRadio = document.querySelector('input[name="platform"]:checked');
+            const platform = selectedRadio.value;
+            const packagePrice = selectedRadio.getAttribute('data-price') || selectedPackagePrice;
             const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
             const studentName = document.getElementById('studentName').value.trim();
             const studentWhatsapp = document.getElementById('studentWhatsapp').value.trim();
@@ -961,7 +972,7 @@
                 id: orderId,
                 orderCode,
                 platform,
-                price: "50 جنيه",
+                price: `${packagePrice} جنيه`,
                 paymentMethod,
                 studentName,
                 studentWhatsapp,
@@ -989,6 +1000,7 @@
 
             // Reset
             document.getElementById('orderForm').reset();
+            updatePriceDisplay(50);
             compressedReceiptBase64 = "";
             document.getElementById('uploadPlaceholder').classList.remove('hidden');
             document.getElementById('receiptPreviewContainer').classList.add('hidden');
@@ -1044,7 +1056,7 @@
                         <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
                             <div class="flex items-center gap-2.5">
                                 <span class="font-mono text-base font-black px-3 py-1 rounded-xl bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">${escapeHtml(order.orderCode)}</span>
-                                <span class="text-xs font-bold text-slate-300">${escapeHtml(order.platform)}</span>
+                                <span class="text-xs font-bold text-slate-300">${escapeHtml(order.platform)} (${escapeHtml(order.price || '50 جنيه')})</span>
                             </div>
                             <span class="text-xs font-bold px-3 py-1 rounded-full border ${statusInfo.badgeClass}">
                                 ${statusInfo.icon} ${statusInfo.label}
@@ -1229,7 +1241,7 @@
                                 </span>
                                 <span class="text-sm font-black text-white">${escapeHtml(order.studentName)}</span>
                                 <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-bold">
-                                    ${escapeHtml(order.platform)} (50 جنيه)
+                                    ${escapeHtml(order.platform)} (${escapeHtml(order.price || '50 جنيه')})
                                 </span>
                                 <span class="text-[11px] text-slate-500">
                                     <i class="fa-regular fa-clock ml-1"></i>${escapeHtml(order.createdAtFormatted || '')}
@@ -1287,6 +1299,10 @@
                                         <div class="flex justify-between">
                                             <span class="text-slate-400">المحفظة:</span>
                                             <span class="font-bold text-white">${escapeHtml(order.paymentMethod)}</span>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-slate-400">المبلغ المطلوب:</span>
+                                            <span class="font-bold text-cyan-300">${escapeHtml(order.price || '50 جنيه')}</span>
                                         </div>
                                         <div class="flex justify-between items-center">
                                             <span class="text-slate-400">الرقم المحول منه:</span>
