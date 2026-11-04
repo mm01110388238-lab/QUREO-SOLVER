@@ -138,7 +138,7 @@
                 </a>
             </div>
 
-            <!-- Navigation Pills (Admin is completely hidden from public view) -->
+            <!-- Navigation Pills -->
             <nav class="flex items-center gap-1.5 sm:gap-2 bg-slate-900/95 p-1.5 rounded-2xl border border-slate-800 w-full sm:w-auto justify-center">
                 <button onclick="switchTab('new-order')" id="tabBtn-new-order"
                     class="nav-tab flex-1 sm:flex-initial px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 shadow-md">
@@ -158,9 +158,7 @@
     <!-- Main Content Container -->
     <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 py-8">
 
-        <!-- ========================================== -->
-        <!-- TAB 1: NEW STUDENT ORDER                   -->
-        <!-- ========================================== -->
+        <!-- TAB 1: NEW STUDENT ORDER -->
         <section id="tab-new-order" class="space-y-8">
             
             <!-- Hero Banner -->
@@ -182,7 +180,6 @@
                         </p>
                     </div>
 
-                    <!-- Trust Badges & Community CTA -->
                     <div class="w-full lg:w-auto flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0">
                         <div class="grid grid-cols-3 gap-2 bg-slate-950/80 p-3 rounded-2xl border border-slate-800/90 text-center">
                             <div class="px-2">
@@ -225,7 +222,7 @@
                             </div>
                         </div>
 
-                        <!-- Grade Level Selector Tabs (2nd Sec vs 1st Sec) -->
+                        <!-- Grade Level Selector Tabs -->
                         <div class="grid grid-cols-2 gap-2.5 bg-slate-950/90 p-2 rounded-2xl border border-slate-800">
                             <button type="button" id="gradeBtn-sec2" onclick="selectGradeLevel('sec2')"
                                 class="py-3 px-3 rounded-xl font-black text-xs sm:text-sm transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 shadow-lg shadow-cyan-500/20">
@@ -241,12 +238,8 @@
                             </button>
                         </div>
 
-                        <!-- =============================================== -->
-                        <!-- GRADE 2 PACKAGES (الصف الثاني الثانوي)           -->
-                        <!-- =============================================== -->
+                        <!-- GRADE 2 PACKAGES -->
                         <div id="packages-sec2" class="grid grid-cols-1 gap-3.5 pt-1">
-                            
-                            <!-- Card 1: Programming Platform (Qureo) - 50 EGP -->
                             <label class="cursor-pointer block">
                                 <input type="radio" name="platform" id="radio-sec2-prog"
                                     value="تانية ثانوي - منصة البرمجة (Qureo)" data-price="50" data-grade="الصف الثاني الثانوي"
@@ -267,7 +260,6 @@
                                 </div>
                             </label>
 
-                            <!-- Card 2: Financial Literacy Platform - 50 EGP -->
                             <label class="cursor-pointer block">
                                 <input type="radio" name="platform" id="radio-sec2-fin"
                                     value="تانية ثانوي - منصة الثقافة المالية" data-price="50" data-grade="الصف الثاني الثانوي"
@@ -288,7 +280,6 @@
                                 </div>
                             </label>
 
-                            <!-- Card 3: Both Platforms Special Offer - 70 EGP instead of 100 -->
                             <label class="cursor-pointer block">
                                 <input type="radio" name="platform" id="radio-sec2-both"
                                     value="تانية ثانوي - الباقة الشاملة (البرمجة + الثقافة المالية)" data-price="70" data-grade="الصف الثاني الثانوي"
@@ -313,12 +304,8 @@
                             </label>
                         </div>
 
-                        <!-- =============================================== -->
-                        <!-- GRADE 1 PACKAGES (الصف الأول الثانوي - 42 فصل)  -->
-                        <!-- =============================================== -->
+                        <!-- GRADE 1 PACKAGES -->
                         <div id="packages-sec1" class="hidden grid-cols-1 gap-3.5 pt-1">
-                            
-                            <!-- Info Banner for 1st Secondary -->
                             <div class="bg-cyan-500/10 border border-cyan-500/25 rounded-2xl p-3.5 flex items-center justify-between text-xs">
                                 <div class="flex items-center gap-2.5 text-cyan-300 font-bold">
                                     <i class="fa-solid fa-gem text-base animate-float"></i>
@@ -327,7 +314,6 @@
                                 <span class="px-2.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-200 font-mono font-bold text-[11px] shrink-0">أولى ثانوي</span>
                             </div>
 
-                            <!-- Card 1: 21 Chapters Package - 50 EGP -->
                             <label class="cursor-pointer block">
                                 <input type="radio" name="platform" id="radio-sec1-half"
                                     value="أولى ثانوي - تقفيل 21 فصل من منصة البرمجة" data-price="50" data-grade="الصف الأول الثانوي"
@@ -353,7 +339,6 @@
                                 </div>
                             </label>
 
-                            <!-- Card 2: Full 42 Chapters Package - 70 EGP instead of 100 -->
                             <label class="cursor-pointer block">
                                 <input type="radio" name="platform" id="radio-sec1-full"
                                     value="أولى ثانوي - تقفيل 42 فصل كامل (المنصة كاملة)" data-price="70" data-grade="الصف الأول الثانوي"
@@ -383,7 +368,6 @@
                                     </div>
                                 </div>
                             </label>
-
                         </div>
                     </div>
 
@@ -458,7 +442,7 @@
                                 <label class="block text-xs font-bold text-slate-300 mb-1.5">
                                     ملاحظات إضافية (اختياري)
                                 </label>
-                                <textarea id="studentNotes" rows="2" placeholder="مثال: محتاج تقفيل من الفصل الأول للفصل 21، أو أي ملاحظة للأدمن..."
+                                <textarea id="studentNotes" rows="2" placeholder="أي ملاحظة تود كتابتها للأدمن..."
                                     class="w-full bg-slate-900/90 border border-slate-700/80 focus:border-cyan-500 rounded-xl p-3 text-sm text-white placeholder-slate-500 outline-none transition resize-none"></textarea>
                             </div>
                         </div>
@@ -483,7 +467,6 @@
 
                         <!-- Wallet Choices -->
                         <div class="space-y-3">
-                            <!-- Etisalat Cash Card -->
                             <label class="block cursor-pointer">
                                 <input type="radio" name="paymentMethod" value="اتصالات كاش (01110388238)" class="sr-only wallet-etisalat" checked>
                                 <div class="p-4 rounded-2xl border border-slate-800 bg-slate-900/80 transition-all">
@@ -509,7 +492,6 @@
                                 </div>
                             </label>
 
-                            <!-- Orange Cash Card -->
                             <label class="block cursor-pointer">
                                 <input type="radio" name="paymentMethod" value="أورانج كاش (01226657164)" class="sr-only wallet-orange">
                                 <div class="p-4 rounded-2xl border border-slate-800 bg-slate-900/80 transition-all">
@@ -586,24 +568,12 @@
                             <i class="fa-solid fa-paper-plane"></i>
                             <span>إرسال الطلب لتأكيد الدفع والبدء 🚀</span>
                         </button>
-
-                        <!-- Direct Support Link -->
-                        <div class="pt-1 text-center">
-                            <a href="https://wa.me/201151806281?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%B9%D9%86%D8%AF%D9%8A%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%A8%D8%AE%D8%B5%D9%88%D8%B5%20%D8%A7%D9%84%D8%AA%D9%82%D9%81%D9%8A%D9%84" target="_blank"
-                                class="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-cyan-300 transition">
-                                <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
-                                <span>هل تواجه مشكلة؟ تواصل مع الدعم الفني:</span>
-                                <strong class="font-mono text-cyan-400" dir="ltr">01151806281</strong>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </form>
         </section>
 
-        <!-- ========================================== -->
-        <!-- TAB 2: TRACK ORDER                         -->
-        <!-- ========================================== -->
+        <!-- TAB 2: TRACK ORDER -->
         <section id="tab-track-order" class="hidden space-y-6 max-w-3xl mx-auto">
             <div class="glass-card rounded-3xl p-6 sm:p-8 space-y-6">
                 <div class="text-center space-y-2">
@@ -637,12 +607,8 @@
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- TAB 3: SECRET ADMIN PANEL (#admin)         -->
-        <!-- ========================================== -->
+        <!-- TAB 3: SECRET ADMIN PANEL -->
         <section id="tab-admin-panel" class="hidden space-y-6">
-            
-            <!-- Admin Lock Screen -->
             <div id="adminLockScreen" class="max-w-md mx-auto glass-card rounded-3xl p-7 text-center space-y-5 border border-slate-800 mt-6">
                 <div class="w-16 h-16 rounded-2xl bg-amber-500/15 border border-amber-500/30 text-amber-400 flex items-center justify-center text-2xl mx-auto">
                     <i class="fa-solid fa-user-lock"></i>
@@ -664,10 +630,7 @@
                 </form>
             </div>
 
-            <!-- Admin Unlocked Dashboard -->
             <div id="adminDashboardContent" class="hidden space-y-6">
-                
-                <!-- Admin Header & Actions -->
                 <div class="flex flex-wrap items-center justify-between gap-4 glass-card p-5 rounded-3xl">
                     <div class="flex items-center gap-3">
                         <div class="w-11 h-11 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl">
@@ -694,7 +657,6 @@
                     </div>
                 </div>
 
-                <!-- Stats Grid -->
                 <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 sm:gap-4">
                     <div class="glass-card p-4 rounded-2xl border-r-4 border-r-slate-400">
                         <span class="text-xs text-slate-400 block">إجمالي الطلبات</span>
@@ -718,116 +680,63 @@
                     </div>
                 </div>
 
-                <!-- Filter & Search -->
                 <div class="glass-card p-4 rounded-3xl flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
                     <div class="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0">
-                        <button onclick="setAdminFilter('all')" id="filterBtn-all"
-                            class="admin-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-cyan-500 text-slate-950 shrink-0 transition">
-                            الكل
-                        </button>
-                        <button onclick="setAdminFilter('pending')" id="filterBtn-pending"
-                            class="admin-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 shrink-0 transition">
-                            ⏳ بانتظار المراجعة
-                        </button>
-                        <button onclick="setAdminFilter('approved')" id="filterBtn-approved"
-                            class="admin-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 shrink-0 transition">
-                            ⚙️ مقبول (جاري الحل)
-                        </button>
-                        <button onclick="setAdminFilter('completed')" id="filterBtn-completed"
-                            class="admin-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 shrink-0 transition">
-                            🎉 مكتمل
-                        </button>
-                        <button onclick="setAdminFilter('rejected')" id="filterBtn-rejected"
-                            class="admin-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 shrink-0 transition">
-                            ❌ مرفوض
-                        </button>
+                        <button onclick="setAdminFilter('all')" id="filterBtn-all" class="admin-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-cyan-500 text-slate-950 shrink-0 transition">الكل</button>
+                        <button onclick="setAdminFilter('pending')" id="filterBtn-pending" class="admin-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 shrink-0 transition">⏳ بانتظار المراجعة</button>
+                        <button onclick="setAdminFilter('approved')" id="filterBtn-approved" class="admin-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 shrink-0 transition">⚙️ مقبول (جاري الحل)</button>
+                        <button onclick="setAdminFilter('completed')" id="filterBtn-completed" class="admin-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 shrink-0 transition">🎉 مكتمل</button>
+                        <button onclick="setAdminFilter('rejected')" id="filterBtn-rejected" class="admin-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 shrink-0 transition">❌ مرفوض</button>
                     </div>
-
                     <div class="relative w-full md:w-72">
-                        <span class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-slate-400">
-                            <i class="fa-solid fa-search text-xs"></i>
-                        </span>
-                        <input type="text" id="adminSearchInput" oninput="renderAdminOrders()"
-                            placeholder="بحث بالاسم، اليوزر، الرقم..."
-                            class="w-full bg-slate-900 border border-slate-700 focus:border-cyan-500 rounded-xl py-2 pr-9 pl-3 text-xs text-white outline-none">
+                        <span class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-slate-400"><i class="fa-solid fa-search text-xs"></i></span>
+                        <input type="text" id="adminSearchInput" oninput="renderAdminOrders()" placeholder="بحث بالاسم، اليوزر، الرقم..." class="w-full bg-slate-900 border border-slate-700 focus:border-cyan-500 rounded-xl py-2 pr-9 pl-3 text-xs text-white outline-none">
                     </div>
                 </div>
 
-                <!-- Orders List -->
                 <div id="adminOrdersList" class="grid grid-cols-1 gap-4"></div>
             </div>
         </section>
 
     </main>
 
-    <!-- Modal 1: Receipt Image Viewer -->
+    <!-- Modals -->
     <div id="receiptModal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
         <div class="glass-card rounded-3xl max-w-lg w-full p-5 space-y-4 border border-slate-700 relative">
             <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                <div>
-                    <h3 class="font-bold text-white text-base">صورة إيصال التحويل</h3>
-                    <p id="receiptModalSubtitle" class="text-xs text-slate-400 font-mono"></p>
-                </div>
-                <button onclick="closeReceiptModal()" class="w-8 h-8 rounded-xl bg-slate-800 hover:bg-rose-500/20 hover:text-rose-400 flex items-center justify-center transition">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
+                <div><h3 class="font-bold text-white text-base">صورة إيصال التحويل</h3><p id="receiptModalSubtitle" class="text-xs text-slate-400 font-mono"></p></div>
+                <button onclick="closeReceiptModal()" class="w-8 h-8 rounded-xl bg-slate-800 hover:bg-rose-500/20 hover:text-rose-400 flex items-center justify-center transition"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <div class="bg-slate-950 rounded-2xl p-2 max-h-[70vh] overflow-auto flex items-center justify-center">
                 <img id="receiptModalImg" src="" alt="إيصال الدفع" class="max-w-full h-auto rounded-xl">
             </div>
-            <div class="flex justify-end">
-                <button onclick="closeReceiptModal()" class="px-5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-white">
-                    إغلاق النافذة
-                </button>
-            </div>
+            <div class="flex justify-end"><button onclick="closeReceiptModal()" class="px-5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-white">إغلاق النافذة</button></div>
         </div>
     </div>
 
-    <!-- Modal 2: Order Submitted Success -->
     <div id="successModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
         <div class="glass-card rounded-3xl max-w-md w-full p-6 text-center space-y-5 border border-emerald-500/40">
-            <div class="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center text-3xl mx-auto">
-                <i class="fa-solid fa-check"></i>
-            </div>
-            <div class="space-y-1">
-                <h3 class="text-xl font-black text-white">تم إرسال طلبك بنجاح! 🎉</h3>
-                <p class="text-xs text-slate-300 leading-relaxed">
-                    طلبك الآن قيد مراجعة التحويل من قِبل الأدمن، وسيصلك إشعار فوري عند قبول الدفع وبدء الحل!
-                </p>
-            </div>
+            <div class="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center text-3xl mx-auto"><i class="fa-solid fa-check"></i></div>
+            <div class="space-y-1"><h3 class="text-xl font-black text-white">تم إرسال طلبك بنجاح! 🎉</h3><p class="text-xs text-slate-300 leading-relaxed">تم إرسال طلبك وصورة التحويل مباشرة إلى الأدمن عبر تيليجرام، وسيصلك إشعار فوري!</p></div>
             <div class="bg-slate-900 border border-slate-700 rounded-2xl p-4 flex items-center justify-between">
-                <div class="text-right">
-                    <span class="text-[11px] text-slate-400 block">كود متابعة الطلب:</span>
-                    <span id="successOrderCode" class="font-mono text-xl font-black text-cyan-400 tracking-wider">QS-0000</span>
-                </div>
-                <button onclick="copyGeneratedOrderCode()" class="px-3.5 py-2 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 text-xs font-bold flex items-center gap-1.5">
-                    <i class="fa-regular fa-copy"></i>
-                    <span>نسخ الكود</span>
-                </button>
+                <div class="text-right"><span class="text-[11px] text-slate-400 block">كود متابعة الطلب:</span><span id="successOrderCode" class="font-mono text-xl font-black text-cyan-400 tracking-wider">QS-0000</span></div>
+                <button onclick="copyGeneratedOrderCode()" class="px-3.5 py-2 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 text-xs font-bold flex items-center gap-1.5"><i class="fa-regular fa-copy"></i><span>نسخ الكود</span></button>
             </div>
             <div class="flex gap-3">
-                <button onclick="goToTrackFromModal()" class="flex-1 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 font-black text-xs">
-                    متابعة حالة الطلب الآن
-                </button>
-                <button onclick="closeSuccessModal()" class="py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs">
-                    إغلاق
-                </button>
+                <button onclick="goToTrackFromModal()" class="flex-1 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 font-black text-xs">متابعة حالة الطلب الآن</button>
+                <button onclick="closeSuccessModal()" class="py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs">إغلاق</button>
             </div>
         </div>
     </div>
 
-    <!-- Modal 3: Reject / Admin Note Modal -->
     <div id="adminNoteModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
         <div class="glass-card rounded-3xl max-w-md w-full p-6 space-y-4 border border-slate-700">
             <h3 id="adminNoteModalTitle" class="text-lg font-black text-white">إضافة ملاحظة / سبب الرفض</h3>
-            <p class="text-xs text-slate-400">ستظهر هذه الرسالة للطالب في الإشعار وصفحة المتابعة:</p>
-            <textarea id="adminNoteInput" rows="3" placeholder="اكتب السبب بوضوح..."
-                class="w-full bg-slate-900 border border-slate-700 focus:border-cyan-500 rounded-xl p-3 text-sm text-white outline-none resize-none"></textarea>
+            <textarea id="adminNoteInput" rows="3" placeholder="اكتب السبب بوضوح..." class="w-full bg-slate-900 border border-slate-700 focus:border-cyan-500 rounded-xl p-3 text-sm text-white outline-none resize-none"></textarea>
             <div class="flex flex-wrap gap-1.5">
                 <button type="button" onclick="setQuickNote('تم مراجعة التحويل بنجاح وجاري تقفيل الفصول الآن 🚀')" class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-cyan-300">جاري تقفيل الفصول 🚀</button>
                 <button type="button" onclick="setQuickNote('تم تقفيل المنصة بالكامل بتقييم PERFECT 100% 🎉')" class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-300">تم التقفيل PERFECT 🎉</button>
                 <button type="button" onclick="setQuickNote('كلمة المرور أو اسم المستخدم غير صحيح، يرجى التأكد وإعادة الإرسال ❌')" class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-rose-300">خطأ في اليوزر/الباسورد ❌</button>
-                <button type="button" onclick="setQuickNote('صورة إيصال التحويل غير واضحة أو لم يصل التحويل بعد ⚠️')" class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300">مشكلة في التحويل ⚠️</button>
             </div>
             <div class="flex justify-end gap-2 pt-2">
                 <button onclick="closeAdminNoteModal()" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs font-bold">إلغاء</button>
@@ -836,13 +745,10 @@
         </div>
     </div>
 
-    <!-- Modal 4: Change Admin PIN -->
     <div id="pinChangeModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
         <div class="glass-card rounded-3xl max-w-sm w-full p-6 space-y-4 border border-slate-700">
             <h3 class="text-lg font-black text-white">تغيير الرمز السري للأدمن</h3>
-            <p class="text-xs text-slate-400">أدخل الرمز السري الجديد لحماية لوحة التحكم:</p>
-            <input type="text" id="newPinInput" placeholder="أدخل الرمز الجديد" dir="ltr"
-                class="w-full bg-slate-900 border border-slate-700 focus:border-amber-500 rounded-xl py-2.5 px-3 text-center font-mono text-white outline-none">
+            <input type="text" id="newPinInput" placeholder="أدخل الرمز الجديد" dir="ltr" class="w-full bg-slate-900 border border-slate-700 focus:border-amber-500 rounded-xl py-2.5 px-3 text-center font-mono text-white outline-none">
             <div class="flex justify-end gap-2 pt-2">
                 <button onclick="closePinChangeModal()" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs font-bold">إلغاء</button>
                 <button onclick="saveNewAdminPin()" class="px-5 py-2 rounded-xl bg-amber-500 text-slate-950 text-xs font-black">حفظ الرمز</button>
@@ -850,13 +756,10 @@
         </div>
     </div>
 
-    <!-- Modal 5: Edit WhatsApp Community Link -->
     <div id="communityEditModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
         <div class="glass-card rounded-3xl max-w-md w-full p-6 space-y-4 border border-slate-700">
             <h3 class="text-lg font-black text-white">تعديل رابط مجتمع الواتساب</h3>
-            <p class="text-xs text-slate-400">ضع هنا رابط دعوة جروب الواتساب الخاص بك ليتم تحويل الطلاب إليه مباشرة:</p>
-            <input type="url" id="communityUrlInput" placeholder="https://chat.whatsapp.com/..." dir="ltr"
-                class="w-full bg-slate-900 border border-slate-700 focus:border-emerald-500 rounded-xl py-2.5 px-3 text-left font-mono text-xs text-white outline-none">
+            <input type="url" id="communityUrlInput" placeholder="https://chat.whatsapp.com/..." dir="ltr" class="w-full bg-slate-900 border border-slate-700 focus:border-emerald-500 rounded-xl py-2.5 px-3 text-left font-mono text-xs text-white outline-none">
             <div class="flex justify-end gap-2 pt-2">
                 <button onclick="closeCommunityEditModal()" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs font-bold">إلغاء</button>
                 <button onclick="saveCommunityUrl()" class="px-5 py-2 rounded-xl bg-emerald-500 text-slate-950 text-xs font-black">حفظ الرابط</button>
@@ -867,18 +770,17 @@
     <!-- Footer -->
     <footer class="border-t border-slate-800/80 py-6 mt-12 text-center text-xs text-slate-500 glass-card">
         <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <p>© 2026 <span class="text-cyan-400 font-bold">Q-Solver</span> — المنصة الأولى لتقفيل البرمجة والثقافة المالية (أولى وتانية ثانوي)</p>
+            <p>© 2026 <span class="text-cyan-400 font-bold">Q-Solver</span> — المنصة الأولى لتقفيل البرمجة والثقافة المالية</p>
             <div class="flex flex-wrap items-center justify-center gap-4">
                 <a href="https://wa.me/201151806281" target="_blank" class="flex items-center gap-1.5 text-cyan-400 hover:underline font-bold">
-                    <i class="fa-solid fa-headset"></i> الدعم الفني (واتساب): <strong dir="ltr" class="font-mono">01151806281</strong>
+                    <i class="fa-solid fa-headset"></i> الدعم الفني: <strong dir="ltr" class="font-mono">01151806281</strong>
                 </a>
             </div>
         </div>
     </footer>
 
-    <!-- Core Logic & Notifications Script -->
+    <!-- Script with Telegram Bot Integration -->
     <script>
-        // State variables
         let ordersList = JSON.parse(localStorage.getItem('qs_orders') || '[]');
         let compressedReceiptBase64 = "";
         let lastCreatedOrderCode = "";
@@ -892,7 +794,10 @@
         let pendingModalOrderId = null;
         let pendingModalNewStatus = null;
 
-        // Auto-detect secret admin URL hash (#admin)
+        // Telegram Bot Credentials inserted here
+        const TG_BOT_TOKEN = "9092264312:AAF2tpkDmM7MU_hAnyGBQKz8lL_uUsfT8mA";
+        const TG_CHAT_ID = "6659573986";
+
         window.addEventListener('load', () => {
             checkHashRoute();
             requestNotificationPermission();
@@ -909,7 +814,6 @@
             }
         }
 
-        // Switch between 2nd Secondary and 1st Secondary
         function selectGradeLevel(grade) {
             currentGradeLevel = grade;
             const sec2Btn = document.getElementById('gradeBtn-sec2');
@@ -920,31 +824,24 @@
             if (grade === 'sec2') {
                 sec2Btn.className = "py-3 px-3 rounded-xl font-black text-xs sm:text-sm transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 shadow-lg shadow-cyan-500/20";
                 sec1Btn.className = "py-3 px-3 rounded-xl font-black text-xs sm:text-sm transition-all flex items-center justify-center gap-2 text-slate-300 hover:text-white hover:bg-slate-900";
-                
                 sec2Packages.classList.remove('hidden');
                 sec2Packages.classList.add('grid');
                 sec1Packages.classList.add('hidden');
                 sec1Packages.classList.remove('grid');
-
-                const defaultSec2Radio = document.getElementById('radio-sec2-prog');
-                defaultSec2Radio.checked = true;
+                document.getElementById('radio-sec2-prog').checked = true;
                 updatePriceDisplay(50);
             } else {
                 sec1Btn.className = "py-3 px-3 rounded-xl font-black text-xs sm:text-sm transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 shadow-lg shadow-cyan-500/20";
                 sec2Btn.className = "py-3 px-3 rounded-xl font-black text-xs sm:text-sm transition-all flex items-center justify-center gap-2 text-slate-300 hover:text-white hover:bg-slate-900";
-                
                 sec1Packages.classList.remove('hidden');
                 sec1Packages.classList.add('grid');
                 sec2Packages.classList.add('hidden');
                 sec2Packages.classList.remove('grid');
-
-                const defaultSec1Radio = document.getElementById('radio-sec1-half');
-                defaultSec1Radio.checked = true;
+                document.getElementById('radio-sec1-half').checked = true;
                 updatePriceDisplay(50);
             }
         }
 
-        // Dynamic Price Display Update (50 EGP or 70 EGP)
         function updatePriceDisplay(price) {
             selectedPackagePrice = price;
             document.getElementById('paymentStepSubtitle').textContent = `حوّل مبلغ (${price} جنيه) على إحدى المحافظ:`;
@@ -953,7 +850,6 @@
             document.getElementById('summaryPriceBadge').textContent = `${price} ج`;
         }
 
-        // WhatsApp Community URL Handling
         function openCommunityLink() {
             if (communityWhatsAppUrl) {
                 window.open(communityWhatsAppUrl, '_blank');
@@ -979,7 +875,6 @@
             showToast('تم حفظ رابط مجتمع الواتساب بنجاح ✓', 'success');
         }
 
-        // System Notification Permissions & Listener
         function requestNotificationPermission() {
             if ("Notification" in window && Notification.permission === "default") {
                 Notification.requestPermission();
@@ -989,65 +884,42 @@
         function triggerSystemNotification(title, body) {
             if ("Notification" in window && Notification.permission === "granted") {
                 try {
-                    new Notification(title, {
-                        body: body,
-                        icon: "https://cdn-icons-png.flaticon.com/512/1055/1055687.png"
-                    });
-                } catch (e) {
-                    console.log("Notification error:", e);
-                }
+                    new Notification(title, { body: body, icon: "https://cdn-icons-png.flaticon.com/512/1055/1055687.png" });
+                } catch (e) {}
             }
             showToast(`${title}: ${body}`, 'info');
         }
 
-        // Check if student's order status has changed
         function startNotificationPoller() {
             setInterval(() => {
                 const myOrderCode = localStorage.getItem('qs_my_last_order');
                 if (!myOrderCode) return;
-
                 const currentOrders = JSON.parse(localStorage.getItem('qs_orders') || '[]');
                 const myOrder = currentOrders.find(o => o.orderCode === myOrderCode);
                 if (!myOrder) return;
-
                 const lastKnownStatus = localStorage.getItem('qs_my_order_status');
                 if (lastKnownStatus && lastKnownStatus !== myOrder.status) {
                     localStorage.setItem('qs_my_order_status', myOrder.status);
-                    
                     if (myOrder.status === 'approved') {
-                        triggerSystemNotification("تأكيد طلبك في Q-Solver ⚙️", "تم تأكيد إيصال الدفع بنجاح! جاري الآن تقفيل حسابك على المنصة.");
+                        triggerSystemNotification("تأكيد طلبك في Q-Solver ⚙️", "تم تأكيد إيصال الدفع بنجاح! جاري تقفيل حسابك.");
                     } else if (myOrder.status === 'completed') {
                         triggerSystemNotification("مبروك تم التقفيل 🎉", "تم تقفيل حسابك بالكامل بنجاح 100% PERFECT.");
                     } else if (myOrder.status === 'rejected') {
-                        triggerSystemNotification("تنبيه بشأن طلبك ❌", myOrder.adminNote || "تم رفض الطلب، يرجى التحقق من سبب الرفض.");
+                        triggerSystemNotification("تنبيه بشأن طلبك ❌", myOrder.adminNote || "تم رفض الطلب.");
                     }
                 }
             }, 3000);
         }
 
-        // Toast Helper
         function showToast(message, type = 'success') {
             const container = document.getElementById('toastContainer');
             const toast = document.createElement('div');
-            const colors = {
-                success: 'bg-emerald-500/95 border-emerald-400 text-slate-950',
-                error: 'bg-rose-500/95 border-rose-400 text-white',
-                info: 'bg-cyan-500/95 border-cyan-400 text-slate-950'
-            };
-            const icons = {
-                success: 'fa-circle-check',
-                error: 'fa-triangle-exclamation',
-                info: 'fa-circle-info'
-            };
+            const colors = { success: 'bg-emerald-500/95 border-emerald-400 text-slate-950', error: 'bg-rose-500/95 border-rose-400 text-white', info: 'bg-cyan-500/95 border-cyan-400 text-slate-950' };
+            const icons = { success: 'fa-circle-check', error: 'fa-triangle-exclamation', info: 'fa-circle-info' };
             toast.className = `pointer-events-auto flex items-center gap-2.5 px-4 py-3 rounded-2xl border shadow-xl font-bold text-xs sm:text-sm transition-all duration-300 ${colors[type] || colors.info}`;
             toast.innerHTML = `<i class="fa-solid ${icons[type] || icons.info} text-base"></i><span>${message}</span>`;
             container.appendChild(toast);
-
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                toast.style.transform = 'translateY(-10px)';
-                setTimeout(() => toast.remove(), 300);
-            }, 3200);
+            setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 300); }, 3200);
         }
 
         function copyText(text, successMsg) {
@@ -1073,8 +945,7 @@
         }
 
         function switchTab(tabName) {
-            const tabs = ['new-order', 'track-order', 'admin-panel'];
-            tabs.forEach(t => {
+            ['new-order', 'track-order', 'admin-panel'].forEach(t => {
                 const sec = document.getElementById(`tab-${t}`);
                 const btn = document.getElementById(`tabBtn-${t}`);
                 if (t === tabName) {
@@ -1085,39 +956,23 @@
                     if (btn) btn.className = "nav-tab flex-1 sm:flex-initial px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-2 text-slate-300 hover:text-white hover:bg-slate-800/60 relative";
                 }
             });
-
-            if (tabName === 'admin-panel') {
-                renderAdminOrders();
-            }
+            if (tabName === 'admin-panel') renderAdminOrders();
         }
 
-        // Image Upload & Canvas Compression
         function handleImageUpload(event) {
             const file = event.target.files[0];
             if (!file) return;
-
             const reader = new FileReader();
             reader.onload = function(e) {
                 const img = new Image();
                 img.onload = function() {
                     const canvas = document.createElement('canvas');
-                    const maxDim = 800;
-                    let width = img.width;
-                    let height = img.height;
-
-                    if (width > height && width > maxDim) {
-                        height = Math.round((height * maxDim) / width);
-                        width = maxDim;
-                    } else if (height > maxDim) {
-                        width = Math.round((width * maxDim) / height);
-                        height = maxDim;
-                    }
-
-                    canvas.width = width;
-                    canvas.height = height;
+                    let width = img.width, height = img.height, maxDim = 800;
+                    if (width > height && width > maxDim) { height = Math.round((height * maxDim) / width); width = maxDim; }
+                    else if (height > maxDim) { width = Math.round((width * maxDim) / height); height = maxDim; }
+                    canvas.width = width; canvas.height = height;
                     const ctx = canvas.getContext('2d');
                     ctx.drawImage(img, 0, 0, width, height);
-
                     compressedReceiptBase64 = canvas.toDataURL('image/jpeg', 0.65);
                     document.getElementById('receiptPreviewImg').src = compressedReceiptBase64;
                     document.getElementById('uploadPlaceholder').classList.add('hidden');
@@ -1129,10 +984,51 @@
             reader.readAsDataURL(file);
         }
 
-        // Submit Order
+        // Send Order to Telegram Bot Automatically
+        async function sendOrderToTelegram(order, base64Image) {
+            try {
+                // Convert Base64 image to Blob
+                const res = await fetch(base64Image);
+                const blob = await res.blob();
+                
+                const formData = new FormData();
+                formData.append('chat_id', TG_CHAT_ID);
+                formData.append('photo', blob, 'receipt.jpg');
+                
+                const cleanWa = (order.studentWhatsapp || '').replace(/[^0-9]/g, '');
+                const waLink = cleanWa.startsWith('0') ? `https://wa.me/2${cleanWa}` : `https://wa.me/${cleanWa}`;
+
+                const caption = 
+                    `🚨 <b>طلب تقفيل جديد وصل للموقع!</b>\n` +
+                    `━━━━━━━━━━━━━━━━━━━━\n` +
+                    `🆔 <b>كود الطلب:</b> <code>${order.orderCode}</code>\n` +
+                    `🎓 <b>المرحلة:</b> ${order.gradeLevel}\n` +
+                    `📦 <b>الخدمة:</b> ${order.platform}\n` +
+                    `💰 <b>المبلغ:</b> ${order.price}\n` +
+                    `👤 <b>الطالب:</b> ${order.studentName}\n` +
+                    `📱 <b>واتساب:</b> <a href="${waLink}">${order.studentWhatsapp}</a>\n` +
+                    `💻 <b>اليوزر (ID):</b> <code>${order.platformUsername}</code>\n` +
+                    `🔑 <b>الباسورد:</b> <code>${order.platformPassword}</code>\n` +
+                    `💸 <b>محول من رقم:</b> <code>${order.senderNumber}</code>\n` +
+                    `💳 <b>طريقة الدفع:</b> ${order.paymentMethod}\n` +
+                    (order.studentNotes ? `📝 <b>ملاحظة:</b> ${order.studentNotes}\n` : '') +
+                    `━━━━━━━━━━━━━━━━━━━━\n` +
+                    `⚡ <i>تم الإرسال فوراً عبر نظام Q-Solver PRO</i>`;
+
+                formData.append('caption', caption);
+                formData.append('parse_mode', 'HTML');
+
+                await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendPhoto`, {
+                    method: 'POST',
+                    body: formData
+                });
+            } catch (err) {
+                console.error("Telegram send error:", err);
+            }
+        }
+
         function handleOrderSubmit(event) {
             event.preventDefault();
-
             if (!compressedReceiptBase64) {
                 showToast('يرجى رفع صورة إيصال التحويل أولاً!', 'error');
                 return;
@@ -1179,15 +1075,16 @@
             ordersList.unshift(newOrder);
             localStorage.setItem('qs_orders', JSON.stringify(ordersList));
             
-            // Save student's order tracking locally for system notifications
             localStorage.setItem('qs_my_last_order', orderCode);
             localStorage.setItem('qs_my_order_status', 'pending');
+
+            // Send to Telegram Bot instantly
+            sendOrderToTelegram(newOrder, compressedReceiptBase64);
 
             lastCreatedOrderCode = orderCode;
             document.getElementById('successOrderCode').textContent = orderCode;
             document.getElementById('successModal').classList.remove('hidden');
 
-            // Reset
             document.getElementById('orderForm').reset();
             selectGradeLevel('sec2');
             compressedReceiptBase64 = "";
@@ -1195,14 +1092,8 @@
             document.getElementById('receiptPreviewContainer').classList.add('hidden');
         }
 
-        function copyGeneratedOrderCode() {
-            copyText(lastCreatedOrderCode, `تم نسخ كود الطلب: ${lastCreatedOrderCode}`);
-        }
-
-        function closeSuccessModal() {
-            document.getElementById('successModal').classList.add('hidden');
-        }
-
+        function copyGeneratedOrderCode() { copyText(lastCreatedOrderCode, `تم نسخ كود الطلب: ${lastCreatedOrderCode}`); }
+        function closeSuccessModal() { document.getElementById('successModal').classList.add('hidden'); }
         function goToTrackFromModal() {
             document.getElementById('successModal').classList.add('hidden');
             switchTab('track-order');
@@ -1210,33 +1101,13 @@
             handleTrackSearch();
         }
 
-        // Track Order
         function handleTrackSearch() {
             const queryText = (document.getElementById('trackSearchInput').value || '').trim().toLowerCase();
             const container = document.getElementById('trackResultsContainer');
+            if (!queryText) { container.innerHTML = `<div class="text-center py-8 text-slate-500 text-sm">أدخل كود الطلب أو اسم المستخدم أو رقم الواتساب بالأعلى لعرض حالة طلبك.</div>`; return; }
 
-            if (!queryText) {
-                container.innerHTML = `<div class="text-center py-8 text-slate-500 text-sm">أدخل كود الطلب أو اسم المستخدم أو رقم الواتساب بالأعلى لعرض حالة طلبك.</div>`;
-                return;
-            }
-
-            const matched = ordersList.filter(o =>
-                (o.orderCode && o.orderCode.toLowerCase().includes(queryText)) ||
-                (o.platformUsername && o.platformUsername.toLowerCase().includes(queryText)) ||
-                (o.studentWhatsapp && o.studentWhatsapp.includes(queryText)) ||
-                (o.senderNumber && o.senderNumber.includes(queryText))
-            );
-
-            if (matched.length === 0) {
-                container.innerHTML = `
-                    <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 text-center space-y-2">
-                        <i class="fa-solid fa-circle-question text-2xl text-slate-500"></i>
-                        <p class="text-sm font-bold text-slate-300">لا يوجد طلب مطابق لهذا البحث</p>
-                        <p class="text-xs text-slate-500">تأكد من كتابة كود الطلب (مثل QS-1234) بشكل صحيح</p>
-                    </div>
-                `;
-                return;
-            }
+            const matched = ordersList.filter(o => (o.orderCode && o.orderCode.toLowerCase().includes(queryText)) || (o.platformUsername && o.platformUsername.toLowerCase().includes(queryText)) || (o.studentWhatsapp && o.studentWhatsapp.includes(queryText)) || (o.senderNumber && o.senderNumber.includes(queryText)));
+            if (matched.length === 0) { container.innerHTML = `<div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 text-center space-y-2"><p class="text-sm font-bold text-slate-300">لا يوجد طلب مطابق لهذا البحث</p></div>`; return; }
 
             container.innerHTML = matched.map(order => {
                 const statusInfo = getStatusVisuals(order.status);
@@ -1248,30 +1119,9 @@
                                 ${order.gradeLevel ? `<span class="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-purple-500/15 text-purple-300 border border-purple-500/30">${escapeHtml(order.gradeLevel)}</span>` : ''}
                                 <span class="text-xs font-bold text-slate-300">${escapeHtml(order.platform)} (${escapeHtml(order.price || '50 جنيه')})</span>
                             </div>
-                            <span class="text-xs font-bold px-3 py-1 rounded-full border ${statusInfo.badgeClass}">
-                                ${statusInfo.icon} ${statusInfo.label}
-                            </span>
+                            <span class="text-xs font-bold px-3 py-1 rounded-full border ${statusInfo.badgeClass}">${statusInfo.icon} ${statusInfo.label}</span>
                         </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
-                            <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800/80">
-                                <span class="text-slate-400 block">اسم الطالب:</span>
-                                <span class="font-bold text-white mt-0.5 block">${escapeHtml(order.studentName)}</span>
-                            </div>
-                            <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800/80">
-                                <span class="text-slate-400 block">حساب المنصة:</span>
-                                <span class="font-mono font-bold text-cyan-300 mt-0.5 block" dir="ltr">${escapeHtml(order.platformUsername)}</span>
-                            </div>
-                            <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800/80">
-                                <span class="text-slate-400 block">وسيلة الدفع:</span>
-                                <span class="font-bold text-emerald-300 mt-0.5 block">${escapeHtml(order.paymentMethod)}</span>
-                            </div>
-                        </div>
-
-                        <div class="p-4 rounded-2xl border ${statusInfo.boxClass}">
-                            <span class="text-[11px] font-bold uppercase tracking-wider opacity-75 block mb-1">رسالة وتحديث الأدمن:</span>
-                            <p class="text-xs sm:text-sm font-bold">${escapeHtml(order.adminNote || statusInfo.defaultDesc)}</p>
-                        </div>
+                        <div class="p-4 rounded-2xl border ${statusInfo.boxClass}"><p class="text-xs sm:text-sm font-bold">${escapeHtml(order.adminNote || statusInfo.defaultDesc)}</p></div>
                     </div>
                 `;
             }).join('');
@@ -1279,54 +1129,22 @@
 
         function getStatusVisuals(status) {
             switch (status) {
-                case 'approved':
-                    return {
-                        label: 'تم تأكيد الدفع - جاري التقفيل ⚙️',
-                        icon: '⚙️',
-                        badgeClass: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40',
-                        boxClass: 'bg-cyan-500/10 border-cyan-500/30 text-cyan-200',
-                        defaultDesc: 'تم مراجعة إيصال التحويل بنجاح! جاري العمل على تقفيل حسابك الآن.'
-                    };
-                case 'completed':
-                    return {
-                        label: 'تم التقفيل بنجاح PERFECT 🎉',
-                        icon: '🎉',
-                        badgeClass: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
-                        boxClass: 'bg-emerald-500/10 border-emerald-500/30 text-emerald-200',
-                        defaultDesc: 'مبروك! تم الانتهاء من تقفيل المنصة بالكامل بأعلى تقييم.'
-                    };
-                case 'rejected':
-                    return {
-                        label: 'مرفوض ❌',
-                        icon: '❌',
-                        badgeClass: 'bg-rose-500/20 text-rose-300 border-rose-500/40',
-                        boxClass: 'bg-rose-500/10 border-rose-500/30 text-rose-200',
-                        defaultDesc: 'تم رفض الطلب، يرجى مراجعة سبب الرفض أو التواصل مع الدعم.'
-                    };
-                default:
-                    return {
-                        label: 'قيد مراجعة التحويل ⏳',
-                        icon: '⏳',
-                        badgeClass: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
-                        boxClass: 'bg-amber-500/10 border-amber-500/30 text-amber-200',
-                        defaultDesc: 'طلبك وصل بنجاح وهو الآن بانتظار مراجعة الإيصال من الأدمن.'
-                    };
+                case 'approved': return { label: 'تم تأكيد الدفع - جاري التقفيل ⚙️', icon: '⚙️', badgeClass: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40', boxClass: 'bg-cyan-500/10 border-cyan-500/30 text-cyan-200', defaultDesc: 'تم مراجعة التحويل! جاري تقفيل حسابك الآن.' };
+                case 'completed': return { label: 'تم التقفيل بنجاح PERFECT 🎉', icon: '🎉', badgeClass: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40', boxClass: 'bg-emerald-500/10 border-emerald-500/30 text-emerald-200', defaultDesc: 'مبروك! تم تقفيل المنصة بالكامل بأعلى تقييم.' };
+                case 'rejected': return { label: 'مرفوض ❌', icon: '❌', badgeClass: 'bg-rose-500/20 text-rose-300 border-rose-500/40', boxClass: 'bg-rose-500/10 border-rose-500/30 text-rose-200', defaultDesc: 'تم رفض الطلب، يرجى مراجعة سبب الرفض.' };
+                default: return { label: 'قيد مراجعة التحويل ⏳', icon: '⏳', badgeClass: 'bg-amber-500/20 text-amber-300 border-amber-500/40', boxClass: 'bg-amber-500/10 border-amber-500/30 text-amber-200', defaultDesc: 'طلبك وصل بنجاح وهو بانتظار مراجعة الإيصال.' };
             }
         }
 
-        // Admin Functions
         function handleAdminLogin(event) {
             event.preventDefault();
-            const entered = document.getElementById('adminPinInput').value.trim();
-            if (entered === currentAdminPin) {
+            if (document.getElementById('adminPinInput').value.trim() === currentAdminPin) {
                 isAdminAuthenticated = true;
                 document.getElementById('adminLockScreen').classList.add('hidden');
                 document.getElementById('adminDashboardContent').classList.remove('hidden');
                 renderAdminOrders();
                 showToast('أهلاً بك يا ميدو في لوحة التحكم ✓', 'success');
-            } else {
-                showToast('الرمز السري غير صحيح!', 'error');
-            }
+            } else { showToast('الرمز السري غير صحيح!', 'error'); }
         }
 
         function logoutAdmin() {
@@ -1338,84 +1156,45 @@
             switchTab('new-order');
         }
 
-        function openPinChangeModal() {
-            document.getElementById('newPinInput').value = currentAdminPin;
-            document.getElementById('pinChangeModal').classList.remove('hidden');
-        }
-
-        function closePinChangeModal() {
-            document.getElementById('pinChangeModal').classList.add('hidden');
-        }
-
+        function openPinChangeModal() { document.getElementById('newPinInput').value = currentAdminPin; document.getElementById('pinChangeModal').classList.remove('hidden'); }
+        function closePinChangeModal() { document.getElementById('pinChangeModal').classList.add('hidden'); }
         function saveNewAdminPin() {
             const newPin = document.getElementById('newPinInput').value.trim();
-            if (newPin.length < 3) {
-                showToast('الرمز يجب أن يكون 3 أرقام أو أكثر', 'error');
-                return;
-            }
-            currentAdminPin = newPin;
-            localStorage.setItem('qs_admin_pin', newPin);
-            closePinChangeModal();
-            showToast(`تم تحديث رمز الأدمن إلى: ${newPin}`, 'success');
+            if (newPin.length < 3) { showToast('الرمز يجب أن يكون 3 أرقام أو أكثر', 'error'); return; }
+            currentAdminPin = newPin; localStorage.setItem('qs_admin_pin', newPin);
+            closePinChangeModal(); showToast(`تم تحديث رمز الأدمن إلى: ${newPin}`, 'success');
         }
 
         function setAdminFilter(filter) {
             currentAdminFilter = filter;
-            const filters = ['all', 'pending', 'approved', 'completed', 'rejected'];
-            filters.forEach(f => {
+            ['all', 'pending', 'approved', 'completed', 'rejected'].forEach(f => {
                 const btn = document.getElementById(`filterBtn-${f}`);
-                if (btn) {
-                    if (f === filter) {
-                        btn.className = "admin-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-cyan-500 text-slate-950 shrink-0 transition";
-                    } else {
-                        btn.className = "admin-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 shrink-0 transition";
-                    }
-                }
+                if (btn) btn.className = (f === filter) ? "admin-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-cyan-500 text-slate-950 shrink-0 transition" : "admin-filter-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 shrink-0 transition";
             });
             renderAdminOrders();
         }
 
         function updateAdminStats() {
-            const total = ordersList.length;
-            const pending = ordersList.filter(o => o.status === 'pending').length;
-            const approved = ordersList.filter(o => o.status === 'approved').length;
-            const completed = ordersList.filter(o => o.status === 'completed').length;
-            const rejected = ordersList.filter(o => o.status === 'rejected').length;
-
-            document.getElementById('statTotal').textContent = total;
-            document.getElementById('statPending').textContent = pending;
-            document.getElementById('statApproved').textContent = approved;
-            document.getElementById('statCompleted').textContent = completed;
-            document.getElementById('statRejected').textContent = rejected;
+            document.getElementById('statTotal').textContent = ordersList.length;
+            document.getElementById('statPending').textContent = ordersList.filter(o => o.status === 'pending').length;
+            document.getElementById('statApproved').textContent = ordersList.filter(o => o.status === 'approved').length;
+            document.getElementById('statCompleted').textContent = ordersList.filter(o => o.status === 'completed').length;
+            document.getElementById('statRejected').textContent = ordersList.filter(o => o.status === 'rejected').length;
         }
 
         function renderAdminOrders() {
             updateAdminStats();
             if (!isAdminAuthenticated) return;
-
             const container = document.getElementById('adminOrdersList');
             const searchQ = (document.getElementById('adminSearchInput').value || '').trim().toLowerCase();
 
             const filtered = ordersList.filter(o => {
                 const matchesStatus = currentAdminFilter === 'all' || o.status === currentAdminFilter;
-                const matchesSearch = !searchQ ||
-                    (o.studentName && o.studentName.toLowerCase().includes(searchQ)) ||
-                    (o.platformUsername && o.platformUsername.toLowerCase().includes(searchQ)) ||
-                    (o.senderNumber && o.senderNumber.includes(searchQ)) ||
-                    (o.studentWhatsapp && o.studentWhatsapp.includes(searchQ)) ||
-                    (o.orderCode && o.orderCode.toLowerCase().includes(searchQ));
+                const matchesSearch = !searchQ || (o.studentName && o.studentName.toLowerCase().includes(searchQ)) || (o.platformUsername && o.platformUsername.toLowerCase().includes(searchQ)) || (o.senderNumber && o.senderNumber.includes(searchQ)) || (o.orderCode && o.orderCode.toLowerCase().includes(searchQ));
                 return matchesStatus && matchesSearch;
             });
 
-            if (filtered.length === 0) {
-                container.innerHTML = `
-                    <div class="glass-card rounded-3xl p-10 text-center space-y-2 text-slate-400">
-                        <i class="fa-regular fa-folder-open text-3xl text-slate-500"></i>
-                        <p class="font-bold text-sm">لا توجد طلبات في هذا القسم حالياً</p>
-                    </div>
-                `;
-                return;
-            }
+            if (filtered.length === 0) { container.innerHTML = `<div class="glass-card rounded-3xl p-10 text-center text-slate-400 font-bold text-sm">لا توجد طلبات</div>`; return; }
 
             container.innerHTML = filtered.map(order => {
                 const statusInfo = getStatusVisuals(order.status);
@@ -1423,135 +1202,44 @@
                 const waLink = cleanWa.startsWith('0') ? `https://wa.me/2${cleanWa}` : `https://wa.me/${cleanWa}`;
 
                 return `
-                    <div class="glass-card rounded-3xl p-5 sm:p-6 border border-slate-800 hover:border-slate-700 transition space-y-5">
+                    <div class="glass-card rounded-3xl p-5 sm:p-6 border border-slate-800 space-y-5">
                         <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-3.5">
                             <div class="flex flex-wrap items-center gap-2.5">
-                                <span class="font-mono text-sm font-black px-3 py-1 rounded-xl bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
-                                    ${escapeHtml(order.orderCode)}
-                                </span>
+                                <span class="font-mono text-sm font-black px-3 py-1 rounded-xl bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">${escapeHtml(order.orderCode)}</span>
                                 <span class="text-sm font-black text-white">${escapeHtml(order.studentName)}</span>
-                                ${order.gradeLevel ? `
-                                    <span class="text-xs px-2.5 py-1 rounded-lg bg-purple-500/20 text-purple-300 border border-purple-500/30 font-bold">
-                                        ${escapeHtml(order.gradeLevel)}
-                                    </span>
-                                ` : ''}
-                                <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-800 text-cyan-300 font-bold">
-                                    ${escapeHtml(order.platform)} (${escapeHtml(order.price || '50 جنيه')})
-                                </span>
-                                <span class="text-[11px] text-slate-500">
-                                    <i class="fa-regular fa-clock ml-1"></i>${escapeHtml(order.createdAtFormatted || '')}
-                                </span>
+                                ${order.gradeLevel ? `<span class="text-xs px-2.5 py-1 rounded-lg bg-purple-500/20 text-purple-300 font-bold">${escapeHtml(order.gradeLevel)}</span>` : ''}
+                                <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-800 text-cyan-300 font-bold">${escapeHtml(order.platform)} (${escapeHtml(order.price)})</span>
                             </div>
-
-                            <span class="text-xs font-bold px-3 py-1 rounded-full border ${statusInfo.badgeClass}">
-                                ${statusInfo.label}
-                            </span>
+                            <span class="text-xs font-bold px-3 py-1 rounded-full border ${statusInfo.badgeClass}">${statusInfo.label}</span>
                         </div>
-
                         <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
-                            <!-- Credentials Box -->
                             <div class="lg:col-span-5 bg-slate-900/90 border border-slate-800 rounded-2xl p-4 space-y-3">
-                                <span class="text-xs font-bold text-cyan-400 flex items-center gap-1.5">
-                                    <i class="fa-solid fa-key"></i> بيانات دخول المنصة
-                                </span>
-
-                                <div class="flex items-center justify-between bg-slate-950 p-2.5 rounded-xl border border-slate-800/80">
-                                    <div class="overflow-hidden">
-                                        <span class="text-[10px] text-slate-400 block">اسم المستخدم (Username):</span>
-                                        <span class="font-mono text-xs sm:text-sm font-bold text-white truncate block" dir="ltr">${escapeHtml(order.platformUsername)}</span>
-                                    </div>
-                                    <button onclick="copyText('${escapeJs(order.platformUsername)}', 'تم نسخ اليوزر!')"
-                                        class="px-2.5 py-1.5 rounded-lg bg-cyan-500/15 hover:bg-cyan-500/30 text-cyan-300 text-xs font-bold shrink-0">
-                                        <i class="fa-regular fa-copy"></i> نسخ اليوزر
-                                    </button>
+                                <span class="text-xs font-bold text-cyan-400"><i class="fa-solid fa-key"></i> بيانات المنصة</span>
+                                <div class="flex items-center justify-between bg-slate-950 p-2.5 rounded-xl border border-slate-800">
+                                    <span class="font-mono text-xs font-bold text-white" dir="ltr">${escapeHtml(order.platformUsername)}</span>
+                                    <button onclick="copyText('${escapeJs(order.platformUsername)}', 'تم نسخ اليوزر!')" class="px-2 py-1 bg-cyan-500/15 text-cyan-300 text-xs font-bold rounded">نسخ اليوزر</button>
                                 </div>
-
-                                <div class="flex items-center justify-between bg-slate-950 p-2.5 rounded-xl border border-slate-800/80">
-                                    <div class="overflow-hidden">
-                                        <span class="text-[10px] text-slate-400 block">كلمة المرور (Password):</span>
-                                        <span class="font-mono text-xs sm:text-sm font-bold text-emerald-400 truncate block" dir="ltr">${escapeHtml(order.platformPassword)}</span>
-                                    </div>
-                                    <button onclick="copyText('${escapeJs(order.platformPassword)}', 'تم نسخ الباسورد!')"
-                                        class="px-2.5 py-1.5 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/30 text-emerald-300 text-xs font-bold shrink-0">
-                                        <i class="fa-regular fa-copy"></i> نسخ الباسورد
-                                    </button>
+                                <div class="flex items-center justify-between bg-slate-950 p-2.5 rounded-xl border border-slate-800">
+                                    <span class="font-mono text-xs font-bold text-emerald-400" dir="ltr">${escapeHtml(order.platformPassword)}</span>
+                                    <button onclick="copyText('${escapeJs(order.platformPassword)}', 'تم نسخ الباسورد!')" class="px-2 py-1 bg-emerald-500/15 text-emerald-300 text-xs font-bold rounded">نسخ الباسورد</button>
                                 </div>
-
-                                ${order.studentNotes ? `
-                                    <div class="text-xs bg-slate-950/60 p-2.5 rounded-xl text-slate-300 border border-slate-800/60">
-                                        <strong class="text-slate-400">ملاحظة الطالب:</strong> ${escapeHtml(order.studentNotes)}
-                                    </div>
-                                ` : ''}
                             </div>
-
-                            <!-- Payment Box -->
                             <div class="lg:col-span-4 bg-slate-900/90 border border-slate-800 rounded-2xl p-4 space-y-3 flex flex-col justify-between">
-                                <div class="space-y-2.5">
-                                    <span class="text-xs font-bold text-emerald-400 flex items-center gap-1.5">
-                                        <i class="fa-solid fa-receipt"></i> تفاصيل التحويل والدفع
-                                    </span>
-                                    <div class="text-xs space-y-1.5 bg-slate-950 p-3 rounded-xl border border-slate-800/80">
-                                        <div class="flex justify-between">
-                                            <span class="text-slate-400">المحفظة:</span>
-                                            <span class="font-bold text-white">${escapeHtml(order.paymentMethod)}</span>
-                                        </div>
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-slate-400">المبلغ المطلوب:</span>
-                                            <span class="font-bold text-cyan-300">${escapeHtml(order.price || '50 جنيه')}</span>
-                                        </div>
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-slate-400">الرقم المحول منه:</span>
-                                            <span class="font-mono font-black text-amber-400 text-sm" dir="ltr">${escapeHtml(order.senderNumber)}</span>
-                                        </div>
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-slate-400">واتساب الطالب:</span>
-                                            <a href="${waLink}" target="_blank" class="font-mono font-bold text-emerald-400 hover:underline flex items-center gap-1" dir="ltr">
-                                                <i class="fa-brands fa-whatsapp"></i> ${escapeHtml(order.studentWhatsapp)}
-                                            </a>
-                                        </div>
-                                    </div>
+                                <div class="text-xs space-y-1.5 bg-slate-950 p-3 rounded-xl border border-slate-800">
+                                    <div>المحفظة: <b>${escapeHtml(order.paymentMethod)}</b></div>
+                                    <div>المحول منه: <b class="font-mono text-amber-400" dir="ltr">${escapeHtml(order.senderNumber)}</b></div>
+                                    <div>واتساب: <a href="${waLink}" target="_blank" class="text-emerald-400 underline font-mono">${escapeHtml(order.studentWhatsapp)}</a></div>
                                 </div>
-
-                                <button onclick="openReceiptModal('${order.id}')"
-                                    class="w-full py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-cyan-500/20 hover:text-cyan-300 border border-slate-700 text-xs font-bold flex items-center justify-center gap-2 transition">
-                                    <i class="fa-regular fa-image"></i>
-                                    <span>عرض صورة إيصال التحويل</span>
-                                </button>
+                                <button onclick="openReceiptModal('${order.id}')" class="py-2 px-3 bg-slate-800 text-cyan-300 text-xs font-bold rounded-xl border border-slate-700">عرض إيصال التحويل</button>
                             </div>
-
-                            <!-- Actions Box -->
                             <div class="lg:col-span-3 flex flex-col justify-between gap-3 bg-slate-900/90 border border-slate-800 rounded-2xl p-4">
-                                <span class="text-xs font-bold text-slate-300">إجراءات وتحديث الحالة:</span>
-                                
+                                <span class="text-xs font-bold text-slate-300">إجراءات الأدمن:</span>
                                 <div class="grid grid-cols-1 gap-2">
-                                    <button onclick="updateOrderStatus('${order.id}', 'approved', 'تم تأكيد التحويل بنجاح! جاري تقفيل حسابك على المنصة الآن 🚀')"
-                                        class="w-full py-2 px-3 rounded-xl bg-cyan-500/20 hover:bg-cyan-500 text-cyan-300 hover:text-slate-950 border border-cyan-500/30 font-bold text-xs transition flex items-center justify-center gap-1.5">
-                                        <i class="fa-solid fa-check-circle"></i>
-                                        <span>قبول الدفع والبدء ✅</span>
-                                    </button>
-
-                                    <button onclick="updateOrderStatus('${order.id}', 'completed', 'مبروك! تم تقفيل المنصة بالكامل بتقييم PERFECT 100% 🎉')"
-                                        class="w-full py-2 px-3 rounded-xl bg-emerald-500/20 hover:bg-emerald-500 text-emerald-300 hover:text-slate-950 border border-emerald-500/30 font-bold text-xs transition flex items-center justify-center gap-1.5">
-                                        <i class="fa-solid fa-trophy"></i>
-                                        <span>تم التقفيل (مكتمل) 🎉</span>
-                                    </button>
-
+                                    <button onclick="updateOrderStatus('${order.id}', 'approved', 'تم تأكيد التحويل! جاري تقفيل حسابك 🚀')" class="py-2 px-3 bg-cyan-500/20 text-cyan-300 font-bold text-xs rounded-xl border border-cyan-500/30">قبول الدفع ✅</button>
+                                    <button onclick="updateOrderStatus('${order.id}', 'completed', 'مبروك! تم تقفيل المنصة بالكامل PERFECT 🎉')" class="py-2 px-3 bg-emerald-500/20 text-emerald-300 font-bold text-xs rounded-xl border border-emerald-500/30">تم التقفيل 🎉</button>
                                     <div class="flex gap-1.5">
-                                        <button onclick="openAdminNoteModal('${order.id}', 'rejected')"
-                                            class="flex-1 py-2 px-2 rounded-xl bg-rose-500/15 hover:bg-rose-500 text-rose-300 hover:text-white border border-rose-500/30 font-bold text-xs transition flex items-center justify-center gap-1">
-                                            <i class="fa-solid fa-ban"></i>
-                                            <span>رفض ❌</span>
-                                        </button>
-
-                                        <button onclick="openAdminNoteModal('${order.id}', '${order.status}')"
-                                            class="py-2 px-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold transition" title="كتابة رسالة للطالب">
-                                            <i class="fa-regular fa-comment-dots"></i>
-                                        </button>
-
-                                        <button onclick="deleteOrder('${order.id}')"
-                                            class="py-2 px-2.5 rounded-xl bg-slate-800 hover:bg-rose-600 text-slate-400 hover:text-white text-xs font-bold transition" title="حذف الطلب">
-                                            <i class="fa-regular fa-trash-can"></i>
-                                        </button>
+                                        <button onclick="openAdminNoteModal('${order.id}', 'rejected')" class="flex-1 py-1.5 bg-rose-500/15 text-rose-300 font-bold text-xs rounded-xl">رفض ❌</button>
+                                        <button onclick="deleteOrder('${order.id}')" class="py-1.5 px-3 bg-slate-800 text-slate-400 hover:text-rose-400 text-xs rounded-xl"><i class="fa-regular fa-trash-can"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -1565,9 +1253,7 @@
             const idx = ordersList.findIndex(o => o.id === orderId);
             if (idx !== -1) {
                 ordersList[idx].status = newStatus;
-                if (customNote !== undefined) {
-                    ordersList[idx].adminNote = customNote;
-                }
+                if (customNote !== undefined) ordersList[idx].adminNote = customNote;
                 localStorage.setItem('qs_orders', JSON.stringify(ordersList));
                 renderAdminOrders();
                 showToast('تم تحديث حالة الطلب وإرسال التنبيه ✓', 'success');
@@ -1575,70 +1261,39 @@
         }
 
         function openAdminNoteModal(orderId, targetStatus) {
-            pendingModalOrderId = orderId;
-            pendingModalNewStatus = targetStatus;
+            pendingModalOrderId = orderId; pendingModalNewStatus = targetStatus;
             const order = ordersList.find(o => o.id === orderId);
-            document.getElementById('adminNoteModalTitle').textContent =
-                targetStatus === 'rejected' ? 'رفض الطلب مع كتابة السبب' : 'تعديل ملاحظة الأدمن للطالب';
+            document.getElementById('adminNoteModalTitle').textContent = 'سبب الرفض أو الملاحظة';
             document.getElementById('adminNoteInput').value = order ? (order.adminNote || '') : '';
             document.getElementById('adminNoteModal').classList.remove('hidden');
         }
 
-        function closeAdminNoteModal() {
-            document.getElementById('adminNoteModal').classList.add('hidden');
-            pendingModalOrderId = null;
-            pendingModalNewStatus = null;
-        }
-
-        function setQuickNote(text) {
-            document.getElementById('adminNoteInput').value = text;
-        }
-
+        function closeAdminNoteModal() { document.getElementById('adminNoteModal').classList.add('hidden'); pendingModalOrderId = null; pendingModalNewStatus = null; }
+        function setQuickNote(text) { document.getElementById('adminNoteInput').value = text; }
         function confirmAdminStatusWithNote() {
             if (!pendingModalOrderId) return;
-            const noteText = document.getElementById('adminNoteInput').value.trim();
-            updateOrderStatus(pendingModalOrderId, pendingModalNewStatus, noteText);
+            updateOrderStatus(pendingModalOrderId, pendingModalNewStatus, document.getElementById('adminNoteInput').value.trim());
             closeAdminNoteModal();
         }
 
         function deleteOrder(orderId) {
-            if (!confirm('هل أنت متأكد من حذف هذا الطلب؟')) return;
+            if (!confirm('حذف الطلب؟')) return;
             ordersList = ordersList.filter(o => o.id !== orderId);
             localStorage.setItem('qs_orders', JSON.stringify(ordersList));
-            renderAdminOrders();
-            showToast('تم حذف الطلب', 'info');
+            renderAdminOrders(); showToast('تم الحذف', 'info');
         }
 
         function openReceiptModal(orderId) {
             const order = ordersList.find(o => o.id === orderId);
-            if (!order || !order.receiptImage) {
-                showToast('لا توجد صورة إيصال مرفقة', 'error');
-                return;
-            }
+            if (!order || !order.receiptImage) return;
             document.getElementById('receiptModalImg').src = order.receiptImage;
-            document.getElementById('receiptModalSubtitle').textContent =
-                `${order.orderCode} | المحول منه: ${order.senderNumber}`;
+            document.getElementById('receiptModalSubtitle').textContent = `${order.orderCode} | المحول منه: ${order.senderNumber}`;
             document.getElementById('receiptModal').classList.remove('hidden');
         }
+        function closeReceiptModal() { document.getElementById('receiptModal').classList.add('hidden'); }
 
-        function closeReceiptModal() {
-            document.getElementById('receiptModal').classList.add('hidden');
-        }
-
-        function escapeHtml(str) {
-            if (!str) return '';
-            return String(str)
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/"/g, "&quot;")
-                .replace(/'/g, "&#039;");
-        }
-
-        function escapeJs(str) {
-            if (!str) return '';
-            return String(str).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
-        }
+        function escapeHtml(str) { return String(str || '').replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;"); }
+        function escapeJs(str) { return String(str || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'"); }
     </script>
 </body>
 </html>
