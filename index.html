@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Q-Solver | منصة الإنجاز الذكي للبرمجة والثقافة المالية</title>
+    <title>Q-Solver | المنصة الأولى لتقفيل البرمجة والثقافة المالية</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Cairo -->
@@ -21,9 +21,9 @@
                     },
                     colors: {
                         brand: {
-                            dark: '#090d16',
-                            card: '#111827',
-                            border: '#1f2937',
+                            dark: '#060911',
+                            card: '#0f172a',
+                            border: '#1e293b',
                             cyan: '#06b6d4',
                             emerald: '#10b981',
                         }
@@ -36,10 +36,11 @@
     <style>
         body {
             font-family: 'Cairo', sans-serif;
-            background-color: #070b14;
+            background-color: #050811;
             background-image: 
-                radial-gradient(at 10% 10%, rgba(6, 182, 212, 0.12) 0px, transparent 45%),
-                radial-gradient(at 90% 85%, rgba(16, 185, 129, 0.10) 0px, transparent 45%);
+                radial-gradient(at 0% 0%, rgba(6, 182, 212, 0.14) 0px, transparent 45%),
+                radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.10) 0px, transparent 45%),
+                radial-gradient(at 50% 100%, rgba(16, 185, 129, 0.10) 0px, transparent 50%);
             background-attachment: fixed;
             color: #f3f4f6;
             overflow-x: hidden;
@@ -50,7 +51,7 @@
             height: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #0b1120;
+            background: #090d16;
         }
         ::-webkit-scrollbar-thumb {
             background: #1e293b;
@@ -61,27 +62,38 @@
         }
 
         .glass-card {
-            background: rgba(17, 24, 39, 0.82);
-            backdrop-filter: blur(16px);
+            background: rgba(15, 23, 42, 0.78);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
         }
 
         .platform-radio:checked + div {
             border-color: #06b6d4;
-            background: rgba(6, 182, 212, 0.12);
-            box-shadow: 0 0 20px -5px rgba(6, 182, 212, 0.4);
+            background: linear-gradient(145deg, rgba(6, 182, 212, 0.16), rgba(16, 185, 129, 0.06));
+            box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.45);
+            transform: translateY(-2px);
         }
 
         .wallet-etisalat:checked + div {
             border-color: #10b981;
-            background: rgba(16, 185, 129, 0.12);
+            background: rgba(16, 185, 129, 0.14);
             box-shadow: 0 0 20px -5px rgba(16, 185, 129, 0.4);
         }
 
         .wallet-orange:checked + div {
             border-color: #f97316;
-            background: rgba(249, 115, 22, 0.12);
+            background: rgba(249, 115, 22, 0.14);
             box-shadow: 0 0 20px -5px rgba(249, 115, 22, 0.4);
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-4px); }
+        }
+        .animate-float {
+            animation: floatSlow 3.5s ease-in-out infinite;
         }
     </style>
 </head>
@@ -94,40 +106,40 @@
     <header class="sticky top-0 z-40 glass-card border-b border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4">
             <!-- Brand Logo -->
-            <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('new-order')">
-                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-cyan-500 to-emerald-500 flex items-center justify-center shadow-lg shadow-cyan-500/25">
-                    <i class="fa-solid fa-bolt-lightning text-white text-xl"></i>
+            <div class="flex items-center gap-3 cursor-pointer group" onclick="switchTab('new-order')">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-cyan-500 via-teal-400 to-emerald-500 flex items-center justify-center shadow-lg shadow-cyan-500/25 group-hover:scale-105 transition">
+                    <i class="fa-solid fa-bolt-lightning text-slate-950 text-xl"></i>
                 </div>
                 <div>
                     <div class="flex items-center gap-2">
                         <h1 class="text-xl sm:text-2xl font-black tracking-wide bg-gradient-to-r from-white via-cyan-200 to-emerald-300 bg-clip-text text-transparent">
                             Q-Solver
                         </h1>
-                        <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
-                            PRO
+                        <span class="text-[10px] font-black px-2 py-0.5 rounded-full bg-gradient-to-r from-cyan-500/20 to-emerald-500/20 text-cyan-300 border border-cyan-500/30">
+                            PRO ⚡
                         </span>
                     </div>
-                    <p class="text-xs text-slate-400">منصة الإنجاز الذكي | البرمجة والثقافة المالية</p>
+                    <p class="text-[11px] sm:text-xs text-slate-400">منصة الإنجاز الذكي | أولى وتانية ثانوي</p>
                 </div>
             </div>
 
-            <!-- Quick Action Links (WhatsApp Community & Support) -->
+            <!-- Quick Action Links (WhatsApp Community & Support: 01151806281) -->
             <div class="flex items-center gap-2">
-                <a id="communityTopBtn" href="javascript:void(0)" onclick="openCommunityLink()" target="_blank"
+                <a id="communityTopBtn" href="javascript:void(0)" onclick="openCommunityLink()"
                     class="px-3 py-2 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/30 text-emerald-400 text-xs font-bold flex items-center gap-1.5 transition">
                     <i class="fa-brands fa-whatsapp text-sm"></i>
                     <span class="hidden sm:inline">مجتمع الواتساب</span>
                 </a>
 
-                <a href="https://wa.me/201110388238?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D9%85%D8%AD%D8%AA%D8%A7%D8%AC%20%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9%20%D8%A8%D8%AE%D8%B5%D9%88%D8%B5%20%D8%AE%D8%AF%D9%85%D8%A9%20Q-Solver" target="_blank"
-                    class="px-3 py-2 rounded-xl bg-cyan-500/15 hover:bg-cyan-500/25 border border-cyan-500/30 text-cyan-300 text-xs font-bold flex items-center gap-1.5 transition">
+                <a href="https://wa.me/201151806281?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D9%85%D8%AD%D8%AA%D8%A7%D8%AC%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%A8%D8%AE%D8%B5%D9%88%D8%B5%20%D9%85%D9%86%D8%B5%D8%A9%20Q-Solver" target="_blank"
+                    class="px-3.5 py-2 rounded-xl bg-cyan-500/15 hover:bg-cyan-500/25 border border-cyan-500/30 text-cyan-300 text-xs font-bold flex items-center gap-1.5 transition shadow-sm">
                     <i class="fa-solid fa-headset text-sm"></i>
                     <span>تواصل مع الدعم</span>
                 </a>
             </div>
 
             <!-- Navigation Pills (Admin is completely hidden from public view) -->
-            <nav class="flex items-center gap-1.5 sm:gap-2 bg-slate-900/90 p-1.5 rounded-2xl border border-slate-800 w-full sm:w-auto justify-center">
+            <nav class="flex items-center gap-1.5 sm:gap-2 bg-slate-900/95 p-1.5 rounded-2xl border border-slate-800 w-full sm:w-auto justify-center">
                 <button onclick="switchTab('new-order')" id="tabBtn-new-order"
                     class="nav-tab flex-1 sm:flex-initial px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 shadow-md">
                     <i class="fa-solid fa-rocket"></i>
@@ -150,30 +162,46 @@
         <!-- TAB 1: NEW STUDENT ORDER                   -->
         <!-- ========================================== -->
         <section id="tab-new-order" class="space-y-8">
+            
             <!-- Hero Banner -->
-            <div class="glass-card rounded-3xl p-6 sm:p-8 border border-cyan-500/20 relative overflow-hidden">
-                <div class="absolute -left-16 -top-16 w-52 h-52 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
-                <div class="absolute -right-16 -bottom-16 w-52 h-52 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="glass-card rounded-3xl p-6 sm:p-8 border border-cyan-500/25 relative overflow-hidden">
+                <div class="absolute -left-20 -top-20 w-64 h-64 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
                 
-                <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-                    <div class="space-y-2.5 max-w-2xl">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-bold">
+                <div class="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+                    <div class="space-y-3 max-w-2xl">
+                        <div class="inline-flex flex-wrap items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-bold">
                             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                            تقفيل كامل بأعلى تقييم (Full Score / PERFECT 100%)
+                            <span>تقفيل مضمون 100% PERFECT — أولى وتانية ثانوي 💎</span>
                         </div>
                         <h2 class="text-2xl sm:text-3xl font-black text-white leading-snug">
-                            أرسل بيانات حسابك وإيصال الدفع، وسيتم تقفيل المنصة فوراً! 🚀
+                            أرسل بيانات حسابك وإيصال الدفع، واستلم منصتك متقفلة بالكامل! 🚀
                         </h2>
-                        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-                            بعد إرسال الطلب، ستصلك إشعارات مباشرة على جهازك لحظة بلحظة عند مراجعة الدفع وقبوله والانتهاء من تقفيل حسابك!
+                        <p class="text-slate-300/90 text-xs sm:text-sm leading-relaxed">
+                            اختر سنتك الدراسية والباقة المناسبة، وسيتم حل كافة الفصول والمراجعات مع تحصيل الألماس الكامل، وتصلك إشعارات فورية بحالة طلبك خطوة بخطوة.
                         </p>
                     </div>
 
-                    <!-- Community CTA Box -->
-                    <div class="w-full md:w-auto bg-slate-900/90 p-4 rounded-2xl border border-slate-800 flex flex-col sm:flex-row items-center gap-3 shrink-0">
-                        <button onclick="openCommunityLink()" class="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black text-xs flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20 transition">
-                            <i class="fa-brands fa-whatsapp text-base"></i>
-                            <span>انضم لمجتمع الواتساب الآن</span>
+                    <!-- Trust Badges & Community CTA -->
+                    <div class="w-full lg:w-auto flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0">
+                        <div class="grid grid-cols-3 gap-2 bg-slate-950/80 p-3 rounded-2xl border border-slate-800/90 text-center">
+                            <div class="px-2">
+                                <span class="text-[10px] text-slate-400 block">التقييم</span>
+                                <span class="text-xs sm:text-sm font-black text-emerald-400">PERFECT</span>
+                            </div>
+                            <div class="px-2 border-x border-slate-800">
+                                <span class="text-[10px] text-slate-400 block">الألماس</span>
+                                <span class="text-xs sm:text-sm font-black text-cyan-400">كامل 💎</span>
+                            </div>
+                            <div class="px-2">
+                                <span class="text-[10px] text-slate-400 block">الأمان</span>
+                                <span class="text-xs sm:text-sm font-black text-amber-400">100% 🔒</span>
+                            </div>
+                        </div>
+
+                        <button type="button" onclick="openCommunityLink()" class="w-full px-5 py-3 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20 transition">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>انضم لمجتمع Qureo_Solver على واتساب</span>
                         </button>
                     </div>
                 </div>
@@ -182,83 +210,190 @@
             <!-- Order Form -->
             <form id="orderForm" onsubmit="handleOrderSubmit(event)" class="grid grid-cols-1 lg:grid-cols-12 gap-6">
                 
-                <!-- Right Column: Platform & Account Credentials (7 cols) -->
+                <!-- Right Column: Grade, Service & Credentials (7 cols) -->
                 <div class="lg:col-span-7 space-y-6">
                     
-                    <!-- Step 1: Select Platform & Pricing -->
-                    <div class="glass-card rounded-3xl p-6 space-y-4">
-                        <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
-                            <span class="w-8 h-8 rounded-xl bg-cyan-500/20 text-cyan-400 font-black flex items-center justify-center text-sm border border-cyan-500/30">1</span>
-                            <div>
-                                <h3 class="text-lg font-bold text-white">اختر الخدمة والمنصة المطلوبة</h3>
-                                <p class="text-xs text-slate-400">حدد الخدمة للاستفادة من أقوى عروض التقفيل</p>
+                    <!-- Step 1: Select Grade & Package -->
+                    <div class="glass-card rounded-3xl p-5 sm:p-6 space-y-5 border border-cyan-500/15">
+                        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
+                            <div class="flex items-center gap-3">
+                                <span class="w-8 h-8 rounded-xl bg-cyan-500/20 text-cyan-400 font-black flex items-center justify-center text-sm border border-cyan-500/30">1</span>
+                                <div>
+                                    <h3 class="text-base sm:text-lg font-black text-white">اختر الصف الدراسي والباقة المطلوبة</h3>
+                                    <p class="text-xs text-slate-400">حدد سنتك الدراسية أولاً لعرض الباقات المخصصة لك</p>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
-                            <!-- Programming Platform (Qureo) -->
-                            <label class="cursor-pointer">
-                                <input type="radio" name="platform" value="منصة البرمجة (Qureo)" data-price="50" onchange="updatePriceDisplay(50)" class="sr-only platform-radio" checked>
-                                <div class="p-4 rounded-2xl border border-slate-800 bg-slate-900/60 hover:bg-slate-800/50 transition-all h-full flex flex-col justify-between">
-                                    <div class="flex items-center justify-between mb-3">
-                                        <span class="w-10 h-10 rounded-xl bg-cyan-500/15 text-cyan-400 flex items-center justify-center text-lg">
+                        <!-- Grade Level Selector Tabs (2nd Sec vs 1st Sec) -->
+                        <div class="grid grid-cols-2 gap-2.5 bg-slate-950/90 p-2 rounded-2xl border border-slate-800">
+                            <button type="button" id="gradeBtn-sec2" onclick="selectGradeLevel('sec2')"
+                                class="py-3 px-3 rounded-xl font-black text-xs sm:text-sm transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 shadow-lg shadow-cyan-500/20">
+                                <i class="fa-solid fa-graduation-cap text-base"></i>
+                                <span>الصف الثاني الثانوي</span>
+                            </button>
+
+                            <button type="button" id="gradeBtn-sec1" onclick="selectGradeLevel('sec1')"
+                                class="py-3 px-3 rounded-xl font-black text-xs sm:text-sm transition-all flex items-center justify-center gap-2 text-slate-300 hover:text-white hover:bg-slate-900">
+                                <i class="fa-solid fa-laptop-code text-base text-cyan-400"></i>
+                                <span>الصف الأول الثانوي</span>
+                                <span class="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 hidden sm:inline">42 فصل</span>
+                            </button>
+                        </div>
+
+                        <!-- =============================================== -->
+                        <!-- GRADE 2 PACKAGES (الصف الثاني الثانوي)           -->
+                        <!-- =============================================== -->
+                        <div id="packages-sec2" class="grid grid-cols-1 gap-3.5 pt-1">
+                            
+                            <!-- Card 1: Programming Platform (Qureo) - 50 EGP -->
+                            <label class="cursor-pointer block">
+                                <input type="radio" name="platform" id="radio-sec2-prog"
+                                    value="تانية ثانوي - منصة البرمجة (Qureo)" data-price="50" data-grade="الصف الثاني الثانوي"
+                                    onchange="updatePriceDisplay(50)" class="sr-only platform-radio" checked>
+                                <div class="p-4 sm:p-5 rounded-2xl border border-slate-800 bg-slate-900/65 hover:bg-slate-800/50 transition-all flex flex-col gap-3">
+                                    <div class="flex items-center justify-between">
+                                        <span class="w-11 h-11 rounded-xl bg-cyan-500/15 border border-cyan-500/25 text-cyan-400 flex items-center justify-center text-lg">
                                             <i class="fa-solid fa-code"></i>
                                         </span>
-                                        <span class="text-xs font-black text-cyan-300 font-mono bg-cyan-500/10 px-2 py-0.5 rounded">50 جنيه</span>
+                                        <span class="text-xs sm:text-sm font-black text-cyan-300 font-mono bg-cyan-500/15 border border-cyan-500/30 px-3 py-1 rounded-lg">
+                                            50 جنيه
+                                        </span>
                                     </div>
                                     <div>
-                                        <h4 class="font-bold text-white text-sm">منصة البرمجة</h4>
-                                        <p class="text-xs text-slate-400 mt-1">حل الدروس والمراجعات كاملة بتقييم Perfect</p>
+                                        <h4 class="font-black text-white text-base">منصة البرمجة</h4>
+                                        <p class="text-xs text-slate-400 mt-1">حل الدروس والمراجعات كاملة بتقييم Perfect (بايثون + جافا سكريبت)</p>
                                     </div>
                                 </div>
                             </label>
 
-                            <!-- Financial Literacy Platform -->
-                            <label class="cursor-pointer">
-                                <input type="radio" name="platform" value="منصة الثقافة المالية" data-price="50" onchange="updatePriceDisplay(50)" class="sr-only platform-radio">
-                                <div class="p-4 rounded-2xl border border-slate-800 bg-slate-900/60 hover:bg-slate-800/50 transition-all h-full flex flex-col justify-between">
-                                    <div class="flex items-center justify-between mb-3">
-                                        <span class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center text-lg">
+                            <!-- Card 2: Financial Literacy Platform - 50 EGP -->
+                            <label class="cursor-pointer block">
+                                <input type="radio" name="platform" id="radio-sec2-fin"
+                                    value="تانية ثانوي - منصة الثقافة المالية" data-price="50" data-grade="الصف الثاني الثانوي"
+                                    onchange="updatePriceDisplay(50)" class="sr-only platform-radio">
+                                <div class="p-4 sm:p-5 rounded-2xl border border-slate-800 bg-slate-900/65 hover:bg-slate-800/50 transition-all flex flex-col gap-3">
+                                    <div class="flex items-center justify-between">
+                                        <span class="w-11 h-11 rounded-xl bg-emerald-500/15 border border-emerald-500/25 text-emerald-400 flex items-center justify-center text-lg">
                                             <i class="fa-solid fa-coins"></i>
                                         </span>
-                                        <span class="text-xs font-black text-emerald-300 font-mono bg-emerald-500/10 px-2 py-0.5 rounded">50 جنيه</span>
+                                        <span class="text-xs sm:text-sm font-black text-emerald-300 font-mono bg-emerald-500/15 border border-emerald-500/30 px-3 py-1 rounded-lg">
+                                            50 جنيه
+                                        </span>
                                     </div>
                                     <div>
-                                        <h4 class="font-bold text-white text-sm">الثقافة المالية</h4>
-                                        <p class="text-xs text-slate-400 mt-1">تقفيل كافة مهام واختبارات المنصة</p>
+                                        <h4 class="font-black text-white text-base">الثقافة المالية</h4>
+                                        <p class="text-xs text-slate-400 mt-1">تقفيل كافة مهام واختبارات المنصة (100% مكتمل)</p>
                                     </div>
                                 </div>
                             </label>
 
-                            <!-- Both Platforms Package Special Offer (70 EGP) -->
-                            <label class="cursor-pointer">
-                                <input type="radio" name="platform" value="الباقة الشاملة (البرمجة + الثقافة المالية)" data-price="70" onchange="updatePriceDisplay(70)" class="sr-only platform-radio">
-                                <div class="p-4 rounded-2xl border border-slate-800 bg-slate-900/60 hover:bg-slate-800/50 transition-all h-full flex flex-col justify-between relative overflow-hidden">
-                                    <div class="flex items-center justify-between mb-3">
-                                        <span class="w-10 h-10 rounded-xl bg-purple-500/15 text-purple-400 flex items-center justify-center text-lg">
+                            <!-- Card 3: Both Platforms Special Offer - 70 EGP instead of 100 -->
+                            <label class="cursor-pointer block">
+                                <input type="radio" name="platform" id="radio-sec2-both"
+                                    value="تانية ثانوي - الباقة الشاملة (البرمجة + الثقافة المالية)" data-price="70" data-grade="الصف الثاني الثانوي"
+                                    onchange="updatePriceDisplay(70)" class="sr-only platform-radio">
+                                <div class="p-4 sm:p-5 rounded-2xl border border-slate-800 bg-slate-900/65 hover:bg-slate-800/50 transition-all flex flex-col gap-3 relative overflow-hidden">
+                                    <div class="flex items-center justify-between">
+                                        <span class="w-11 h-11 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400 flex items-center justify-center text-lg">
                                             <i class="fa-solid fa-crown"></i>
                                         </span>
-                                        <div class="text-left">
-                                            <span class="line-through text-[11px] text-rose-400 font-mono block">100 ج</span>
-                                            <span class="text-xs font-black text-amber-300 font-mono bg-amber-500/20 px-2 py-0.5 rounded border border-amber-500/30">70 جنيه بس!</span>
+                                        <div class="text-left flex flex-col items-end">
+                                            <span class="line-through text-xs text-rose-400 font-mono font-bold mb-0.5">100 ج</span>
+                                            <span class="text-xs sm:text-sm font-black text-amber-300 font-mono bg-amber-500/20 px-3 py-1 rounded-lg border border-amber-500/40">
+                                                70 جنيه بس!
+                                            </span>
                                         </div>
                                     </div>
                                     <div>
-                                        <h4 class="font-bold text-white text-sm">المنصتين معاً 🔥</h4>
-                                        <p class="text-xs text-amber-200/80 mt-1 font-semibold">عرض خاص: تقفيل المنصتين معاً بـ 70 جنيه بدلاً من 100!</p>
+                                        <h4 class="font-black text-white text-base">المنصتين معاً 🔥</h4>
+                                        <p class="text-xs text-amber-200/90 mt-1 font-bold">عرض خاص: تقفيل المنصتين معاً بـ 70 جنيه بدلاً من 100!</p>
                                     </div>
                                 </div>
                             </label>
+                        </div>
+
+                        <!-- =============================================== -->
+                        <!-- GRADE 1 PACKAGES (الصف الأول الثانوي - 42 فصل)  -->
+                        <!-- =============================================== -->
+                        <div id="packages-sec1" class="hidden grid-cols-1 gap-3.5 pt-1">
+                            
+                            <!-- Info Banner for 1st Secondary -->
+                            <div class="bg-cyan-500/10 border border-cyan-500/25 rounded-2xl p-3.5 flex items-center justify-between text-xs">
+                                <div class="flex items-center gap-2.5 text-cyan-300 font-bold">
+                                    <i class="fa-solid fa-gem text-base animate-float"></i>
+                                    <span>منصة البرمجة (QUREO JavaScript) — إجمالي المنهج 42 فصل (210 ألماسة)</span>
+                                </div>
+                                <span class="px-2.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-200 font-mono font-bold text-[11px] shrink-0">أولى ثانوي</span>
+                            </div>
+
+                            <!-- Card 1: 21 Chapters Package - 50 EGP -->
+                            <label class="cursor-pointer block">
+                                <input type="radio" name="platform" id="radio-sec1-half"
+                                    value="أولى ثانوي - تقفيل 21 فصل من منصة البرمجة" data-price="50" data-grade="الصف الأول الثانوي"
+                                    onchange="updatePriceDisplay(50)" class="sr-only platform-radio">
+                                <div class="p-4 sm:p-5 rounded-2xl border border-slate-800 bg-slate-900/65 hover:bg-slate-800/50 transition-all flex flex-col gap-3">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-2.5">
+                                            <span class="w-11 h-11 rounded-xl bg-cyan-500/15 border border-cyan-500/25 text-cyan-400 flex items-center justify-center text-lg">
+                                                <i class="fa-solid fa-layer-group"></i>
+                                            </span>
+                                            <span class="text-xs font-bold px-2.5 py-1 rounded-lg bg-slate-800 text-cyan-300 font-mono">
+                                                21 / 42 فصل
+                                            </span>
+                                        </div>
+                                        <span class="text-xs sm:text-sm font-black text-cyan-300 font-mono bg-cyan-500/15 border border-cyan-500/30 px-3 py-1 rounded-lg">
+                                            50 جنيه
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-black text-white text-base">تقفيل 21 فصل من منصة البرمجة 💻</h4>
+                                        <p class="text-xs text-slate-400 mt-1">حل وتقفيل نصف المنصة (21 فصل كامل) بتقييم Perfect + تحصيل الألماس</p>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <!-- Card 2: Full 42 Chapters Package - 70 EGP instead of 100 -->
+                            <label class="cursor-pointer block">
+                                <input type="radio" name="platform" id="radio-sec1-full"
+                                    value="أولى ثانوي - تقفيل 42 فصل كامل (المنصة كاملة)" data-price="70" data-grade="الصف الأول الثانوي"
+                                    onchange="updatePriceDisplay(70)" class="sr-only platform-radio">
+                                <div class="p-4 sm:p-5 rounded-2xl border border-slate-800 bg-slate-900/65 hover:bg-slate-800/50 transition-all flex flex-col gap-3 relative overflow-hidden">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-2.5">
+                                            <span class="w-11 h-11 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-400 flex items-center justify-center text-lg">
+                                                <i class="fa-solid fa-trophy"></i>
+                                            </span>
+                                            <span class="text-xs font-black px-2.5 py-1 rounded-lg bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-mono">
+                                                42 / 42 فصل (210 💎)
+                                            </span>
+                                        </div>
+                                        <div class="text-left flex flex-col items-end">
+                                            <span class="line-through text-xs text-rose-400 font-mono font-bold mb-0.5">100 ج</span>
+                                            <span class="text-xs sm:text-sm font-black text-amber-300 font-mono bg-amber-500/20 px-3 py-1 rounded-lg border border-amber-500/40">
+                                                70 جنيه بس!
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-black text-white text-base">تقفيل 42 فصل كامل (المنصة بالكامل) 🔥</h4>
+                                        <p class="text-xs text-amber-200/90 mt-1 font-bold">
+                                            عرض خاص: تقفيل الـ 42 فصل بالكامل + جمع 210/210 ألماسة بـ 70 جنيه بدلاً من 100!
+                                        </p>
+                                    </div>
+                                </div>
+                            </label>
+
                         </div>
                     </div>
 
                     <!-- Step 2: Student Platform Credentials -->
-                    <div class="glass-card rounded-3xl p-6 space-y-4">
+                    <div class="glass-card rounded-3xl p-5 sm:p-6 space-y-4">
                         <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
                             <span class="w-8 h-8 rounded-xl bg-cyan-500/20 text-cyan-400 font-black flex items-center justify-center text-sm border border-cyan-500/30">2</span>
                             <div>
-                                <h3 class="text-lg font-bold text-white">بيانات حسابك في المنصة</h3>
-                                <p class="text-xs text-slate-400">تأكد من كتابة اليوزر والباسورد بدقة لضمان سرعة التقفيل</p>
+                                <h3 class="text-base sm:text-lg font-black text-white">بيانات حسابك في المنصة</h3>
+                                <p class="text-xs text-slate-400">تأكد من كتابة كود الطالب (Username) وكلمة المرور بدقة لضمان سرعة التنفيذ</p>
                             </div>
                         </div>
 
@@ -271,7 +406,7 @@
                                     <span class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-slate-400">
                                         <i class="fa-regular fa-user"></i>
                                     </span>
-                                    <input type="text" id="studentName" required placeholder="مثال: أحمد محمد"
+                                    <input type="text" id="studentName" required placeholder="اكتب اسمك الثلاثي"
                                         class="w-full bg-slate-900/90 border border-slate-700/80 focus:border-cyan-500 rounded-xl py-2.5 pr-10 pl-3 text-sm text-white placeholder-slate-500 outline-none transition">
                                 </div>
                             </div>
@@ -297,7 +432,7 @@
                                     <span class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-cyan-400">
                                         <i class="fa-solid fa-id-badge"></i>
                                     </span>
-                                    <input type="text" id="platformUsername" required placeholder="اليوزر أو الكود المسجل في المنصة" dir="ltr"
+                                    <input type="text" id="platformUsername" required placeholder="مثال: 474860097" dir="ltr"
                                         class="w-full bg-slate-900/90 border border-slate-700/80 focus:border-cyan-500 rounded-xl py-2.5 pr-10 pl-3 text-sm text-left text-white placeholder-slate-500 outline-none transition font-mono">
                                 </div>
                             </div>
@@ -323,7 +458,7 @@
                                 <label class="block text-xs font-bold text-slate-300 mb-1.5">
                                     ملاحظات إضافية (اختياري)
                                 </label>
-                                <textarea id="studentNotes" rows="2" placeholder="أي ملاحظة تود كتابتها للأدمن..."
+                                <textarea id="studentNotes" rows="2" placeholder="مثال: محتاج تقفيل من الفصل الأول للفصل 21، أو أي ملاحظة للأدمن..."
                                     class="w-full bg-slate-900/90 border border-slate-700/80 focus:border-cyan-500 rounded-xl p-3 text-sm text-white placeholder-slate-500 outline-none transition resize-none"></textarea>
                             </div>
                         </div>
@@ -332,13 +467,18 @@
 
                 <!-- Left Column: Payment & Receipt Upload (5 cols) -->
                 <div class="lg:col-span-5 space-y-6">
-                    <div class="glass-card rounded-3xl p-6 space-y-5 border border-emerald-500/20">
-                        <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
-                            <span class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 font-black flex items-center justify-center text-sm border border-emerald-500/30">3</span>
-                            <div>
-                                <h3 class="text-lg font-bold text-white">الدفع ورفع إيصال التحويل</h3>
-                                <p id="paymentStepSubtitle" class="text-xs text-slate-400">حوّل مبلغ (50 جنيه) على إحدى المحافظ التالية:</p>
+                    <div class="glass-card rounded-3xl p-5 sm:p-6 space-y-5 border border-emerald-500/25 sticky top-24">
+                        <div class="flex items-center justify-between gap-2 border-b border-slate-800 pb-3">
+                            <div class="flex items-center gap-3">
+                                <span class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 font-black flex items-center justify-center text-sm border border-emerald-500/30">3</span>
+                                <div>
+                                    <h3 class="text-base sm:text-lg font-black text-white">الدفع وتأكيد الإيصال</h3>
+                                    <p id="paymentStepSubtitle" class="text-xs text-slate-400">حوّل مبلغ (50 جنيه) على إحدى المحافظ:</p>
+                                </div>
                             </div>
+                            <span id="summaryPriceBadge" class="px-3 py-1 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-mono font-black text-sm">
+                                50 ج
+                            </span>
                         </div>
 
                         <!-- Wallet Choices -->
@@ -346,7 +486,7 @@
                             <!-- Etisalat Cash Card -->
                             <label class="block cursor-pointer">
                                 <input type="radio" name="paymentMethod" value="اتصالات كاش (01110388238)" class="sr-only wallet-etisalat" checked>
-                                <div class="p-4 rounded-2xl border border-slate-800 bg-slate-900/75 transition-all">
+                                <div class="p-4 rounded-2xl border border-slate-800 bg-slate-900/80 transition-all">
                                     <div class="flex items-center justify-between gap-2">
                                         <div class="flex items-center gap-3">
                                             <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center font-black text-base">
@@ -372,7 +512,7 @@
                             <!-- Orange Cash Card -->
                             <label class="block cursor-pointer">
                                 <input type="radio" name="paymentMethod" value="أورانج كاش (01226657164)" class="sr-only wallet-orange">
-                                <div class="p-4 rounded-2xl border border-slate-800 bg-slate-900/75 transition-all">
+                                <div class="p-4 rounded-2xl border border-slate-800 bg-slate-900/80 transition-all">
                                     <div class="flex items-center justify-between gap-2">
                                         <div class="flex items-center gap-3">
                                             <div class="w-10 h-10 rounded-xl bg-orange-500/20 border border-orange-500/40 text-orange-400 flex items-center justify-center font-black text-base">
@@ -405,7 +545,7 @@
                                 <span class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-slate-400">
                                     <i class="fa-solid fa-money-bill-transfer"></i>
                                 </span>
-                                <input type="tel" id="senderNumber" required placeholder="رقم المحفظة المحول منها للتأكيد" dir="ltr"
+                                <input type="tel" id="senderNumber" required placeholder="رقم المحفظة أو السنترال المحول منه" dir="ltr"
                                     class="w-full bg-slate-900/90 border border-slate-700/80 focus:border-emerald-500 rounded-xl py-2.5 pr-10 pl-3 text-sm text-right text-white placeholder-slate-500 outline-none transition">
                             </div>
                         </div>
@@ -425,7 +565,7 @@
                                         <i class="fa-solid fa-cloud-arrow-up"></i>
                                     </div>
                                     <p class="text-xs sm:text-sm font-bold text-slate-200">اضغط هنا لرفع سكرين شوت التحويل</p>
-                                    <p class="text-[11px] text-slate-400">يدعم الصور من الهاتف أو الكمبيوتر</p>
+                                    <p class="text-[11px] text-slate-400">يدعم جميع صور الموبايل والكمبيوتر</p>
                                 </div>
 
                                 <div id="receiptPreviewContainer" class="hidden space-y-3">
@@ -446,6 +586,16 @@
                             <i class="fa-solid fa-paper-plane"></i>
                             <span>إرسال الطلب لتأكيد الدفع والبدء 🚀</span>
                         </button>
+
+                        <!-- Direct Support Link -->
+                        <div class="pt-1 text-center">
+                            <a href="https://wa.me/201151806281?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%B9%D9%86%D8%AF%D9%8A%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%A8%D8%AE%D8%B5%D9%88%D8%B5%20%D8%A7%D9%84%D8%AA%D9%82%D9%81%D9%8A%D9%84" target="_blank"
+                                class="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-cyan-300 transition">
+                                <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
+                                <span>هل تواجه مشكلة؟ تواصل مع الدعم الفني:</span>
+                                <strong class="font-mono text-cyan-400" dir="ltr">01151806281</strong>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </form>
@@ -715,12 +865,12 @@
     </div>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-800/80 py-6 mt-12 text-center text-xs text-slate-500">
+    <footer class="border-t border-slate-800/80 py-6 mt-12 text-center text-xs text-slate-500 glass-card">
         <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <p>© 2026 <span class="text-cyan-400 font-bold">Q-Solver</span> — منصة الإنجاز للبرمجة والثقافة المالية</p>
-            <div class="flex items-center gap-4">
-                <a href="https://wa.me/201110388238" target="_blank" class="flex items-center gap-1.5 text-cyan-400 hover:underline">
-                    <i class="fa-solid fa-headset"></i> الدعم الفني: <strong dir="ltr">01110388238</strong>
+            <p>© 2026 <span class="text-cyan-400 font-bold">Q-Solver</span> — المنصة الأولى لتقفيل البرمجة والثقافة المالية (أولى وتانية ثانوي)</p>
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <a href="https://wa.me/201151806281" target="_blank" class="flex items-center gap-1.5 text-cyan-400 hover:underline font-bold">
+                    <i class="fa-solid fa-headset"></i> الدعم الفني (واتساب): <strong dir="ltr" class="font-mono">01151806281</strong>
                 </a>
             </div>
         </div>
@@ -737,6 +887,7 @@
         let currentAdminFilter = "all";
         let communityWhatsAppUrl = localStorage.getItem('qs_community_url') || "";
         let selectedPackagePrice = 50;
+        let currentGradeLevel = "sec2";
 
         let pendingModalOrderId = null;
         let pendingModalNewStatus = null;
@@ -758,12 +909,48 @@
             }
         }
 
+        // Switch between 2nd Secondary and 1st Secondary
+        function selectGradeLevel(grade) {
+            currentGradeLevel = grade;
+            const sec2Btn = document.getElementById('gradeBtn-sec2');
+            const sec1Btn = document.getElementById('gradeBtn-sec1');
+            const sec2Packages = document.getElementById('packages-sec2');
+            const sec1Packages = document.getElementById('packages-sec1');
+
+            if (grade === 'sec2') {
+                sec2Btn.className = "py-3 px-3 rounded-xl font-black text-xs sm:text-sm transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 shadow-lg shadow-cyan-500/20";
+                sec1Btn.className = "py-3 px-3 rounded-xl font-black text-xs sm:text-sm transition-all flex items-center justify-center gap-2 text-slate-300 hover:text-white hover:bg-slate-900";
+                
+                sec2Packages.classList.remove('hidden');
+                sec2Packages.classList.add('grid');
+                sec1Packages.classList.add('hidden');
+                sec1Packages.classList.remove('grid');
+
+                const defaultSec2Radio = document.getElementById('radio-sec2-prog');
+                defaultSec2Radio.checked = true;
+                updatePriceDisplay(50);
+            } else {
+                sec1Btn.className = "py-3 px-3 rounded-xl font-black text-xs sm:text-sm transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 shadow-lg shadow-cyan-500/20";
+                sec2Btn.className = "py-3 px-3 rounded-xl font-black text-xs sm:text-sm transition-all flex items-center justify-center gap-2 text-slate-300 hover:text-white hover:bg-slate-900";
+                
+                sec1Packages.classList.remove('hidden');
+                sec1Packages.classList.add('grid');
+                sec2Packages.classList.add('hidden');
+                sec2Packages.classList.remove('grid');
+
+                const defaultSec1Radio = document.getElementById('radio-sec1-half');
+                defaultSec1Radio.checked = true;
+                updatePriceDisplay(50);
+            }
+        }
+
         // Dynamic Price Display Update (50 EGP or 70 EGP)
         function updatePriceDisplay(price) {
             selectedPackagePrice = price;
-            document.getElementById('paymentStepSubtitle').textContent = `حوّل مبلغ (${price} جنيه) على إحدى المحافظ التالية:`;
+            document.getElementById('paymentStepSubtitle').textContent = `حوّل مبلغ (${price} جنيه) على إحدى المحافظ:`;
             document.getElementById('etisalatPriceTag').textContent = `${price} ج`;
             document.getElementById('orangePriceTag').textContent = `${price} ج`;
+            document.getElementById('summaryPriceBadge').textContent = `${price} ج`;
         }
 
         // WhatsApp Community URL Handling
@@ -771,7 +958,7 @@
             if (communityWhatsAppUrl) {
                 window.open(communityWhatsAppUrl, '_blank');
             } else {
-                alert('لم يتم تعيين رابط مجتمع الواتساب بعد، يمكنك التواصل مع الدعم الفني مباشرة.');
+                window.open('https://wa.me/201151806281?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%B9%D8%A7%D9%88%D8%B2%20%D8%A3%D9%86%D8%B6%D9%85%20%D9%84%D9%85%D8%AC%D8%AA%D9%85%D8%B9%20Qureo_Solver', '_blank');
             }
         }
 
@@ -955,6 +1142,7 @@
 
             const selectedRadio = document.querySelector('input[name="platform"]:checked');
             const platform = selectedRadio.value;
+            const gradeLevel = selectedRadio.getAttribute('data-grade') || (currentGradeLevel === 'sec2' ? 'الصف الثاني الثانوي' : 'الصف الأول الثانوي');
             const packagePrice = selectedRadio.getAttribute('data-price') || selectedPackagePrice;
             const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
             const studentName = document.getElementById('studentName').value.trim();
@@ -971,6 +1159,7 @@
             const newOrder = {
                 id: orderId,
                 orderCode,
+                gradeLevel,
                 platform,
                 price: `${packagePrice} جنيه`,
                 paymentMethod,
@@ -1000,7 +1189,7 @@
 
             // Reset
             document.getElementById('orderForm').reset();
-            updatePriceDisplay(50);
+            selectGradeLevel('sec2');
             compressedReceiptBase64 = "";
             document.getElementById('uploadPlaceholder').classList.remove('hidden');
             document.getElementById('receiptPreviewContainer').classList.add('hidden');
@@ -1054,8 +1243,9 @@
                 return `
                     <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-5 sm:p-6 space-y-4">
                         <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
-                            <div class="flex items-center gap-2.5">
+                            <div class="flex flex-wrap items-center gap-2">
                                 <span class="font-mono text-base font-black px-3 py-1 rounded-xl bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">${escapeHtml(order.orderCode)}</span>
+                                ${order.gradeLevel ? `<span class="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-purple-500/15 text-purple-300 border border-purple-500/30">${escapeHtml(order.gradeLevel)}</span>` : ''}
                                 <span class="text-xs font-bold text-slate-300">${escapeHtml(order.platform)} (${escapeHtml(order.price || '50 جنيه')})</span>
                             </div>
                             <span class="text-xs font-bold px-3 py-1 rounded-full border ${statusInfo.badgeClass}">
@@ -1240,7 +1430,12 @@
                                     ${escapeHtml(order.orderCode)}
                                 </span>
                                 <span class="text-sm font-black text-white">${escapeHtml(order.studentName)}</span>
-                                <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-bold">
+                                ${order.gradeLevel ? `
+                                    <span class="text-xs px-2.5 py-1 rounded-lg bg-purple-500/20 text-purple-300 border border-purple-500/30 font-bold">
+                                        ${escapeHtml(order.gradeLevel)}
+                                    </span>
+                                ` : ''}
+                                <span class="text-xs px-2.5 py-1 rounded-lg bg-slate-800 text-cyan-300 font-bold">
                                     ${escapeHtml(order.platform)} (${escapeHtml(order.price || '50 جنيه')})
                                 </span>
                                 <span class="text-[11px] text-slate-500">
