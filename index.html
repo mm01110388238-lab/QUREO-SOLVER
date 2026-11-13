@@ -95,9 +95,15 @@
         .animate-float {
             animation: floatSlow 3.5s ease-in-out infinite;
         }
+
+        /* تنسيقات شات شوكت */
+        .custom-scrollbar::-webkit-scrollbar { width: 5px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(6, 182, 212, 0.3); border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(6, 182, 212, 0.5); }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-cyan-500 selection:text-white">
+<body class="min-h-screen flex flex-col justify-between selection:bg-cyan-500 selection:text-white relative">
 
     <!-- Toast Notification Container -->
     <div id="toastContainer" class="fixed top-5 left-1/2 -translate-x-1/2 z-50 flex flex-col gap-2 w-11/12 max-w-md pointer-events-none"></div>
@@ -710,6 +716,43 @@
 
     </main>
 
+    <!-- المساعد الذكي شوكت (AI Chatbot) -->
+    <div id="shawkat-chat" class="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-auto">
+        <!-- نافذة المحادثة (مخفية افتراضياً) -->
+        <div id="shawkat-window" class="hidden w-[90vw] max-w-[360px] bg-slate-900 border border-cyan-500/30 rounded-2xl shadow-2xl mb-4 flex-col h-[400px] overflow-hidden transition-all">
+            <!-- الهيدر -->
+            <div class="bg-gradient-to-r from-cyan-500 to-emerald-500 p-3 flex justify-between items-center text-slate-950">
+                <div class="flex items-center gap-2">
+                    <div class="w-9 h-9 bg-white rounded-full flex items-center justify-center text-2xl shadow-sm">🤖</div>
+                    <div>
+                        <h3 class="font-black text-sm">شوكت | المساعد الذكي</h3>
+                        <p class="text-[10px] font-bold">جاهز للرد على استفساراتك فوراً ⚡</p>
+                    </div>
+                </div>
+                <button onclick="toggleShawkat()" class="text-slate-900 hover:text-white transition"><i class="fa-solid fa-times text-xl"></i></button>
+            </div>
+            
+            <!-- منطقة الرسائل -->
+            <div id="shawkat-messages" class="flex-1 p-3 overflow-y-auto space-y-3 text-sm text-white flex flex-col custom-scrollbar">
+                <!-- رسالة ترحيب -->
+                <div class="bg-slate-800 p-3 rounded-2xl rounded-tr-none self-start max-w-[85%] border border-slate-700 shadow-sm leading-relaxed">
+                    أهلاً بيك يا بطل في Kovex Tech! معاك المساعد الذكي <b>"شوكت"</b>. أقدر أساعدك في إيه بخصوص تقفيل المنصات أو الأسعار؟
+                </div>
+            </div>
+            
+            <!-- حقل الإدخال -->
+            <div class="p-3 border-t border-slate-800 bg-slate-950 flex gap-2">
+                <input type="text" id="shawkat-input" placeholder="اكتب سؤالك لشوكت..." class="flex-1 bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white outline-none focus:border-cyan-500 transition" onkeypress="if(event.key === 'Enter') sendShawkatMessage()">
+                <button onclick="sendShawkatMessage()" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 px-4 rounded-xl font-bold transition shadow-md shadow-cyan-500/20"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+        
+        <!-- الزر العائم لفتح الشات -->
+        <button onclick="toggleShawkat()" class="w-14 h-14 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-full shadow-lg shadow-cyan-500/40 flex items-center justify-center text-slate-950 text-2xl hover:scale-110 transition-transform">
+            <i class="fa-solid fa-robot"></i>
+        </button>
+    </div>
+
     <!-- Modals -->
     <div id="receiptModal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
         <div class="glass-card rounded-3xl max-w-lg w-full p-5 space-y-4 border border-slate-700 relative">
@@ -1303,6 +1346,58 @@
 
         function escapeHtml(str) { return String(str || '').replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;"); }
         function escapeJs(str) { return String(str || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'"); }
+
+        // كود برمجة عقل شوكت
+        function toggleShawkat() {
+            const win = document.getElementById('shawkat-window');
+            win.classList.toggle('hidden');
+            win.classList.toggle('flex');
+        }
+
+        async function sendShawkatMessage() {
+            const input = document.getElementById('shawkat-input');
+            const msg = input.value.trim();
+            if(!msg) return;
+            
+            const msgsDiv = document.getElementById('shawkat-messages');
+            
+            // رسالة الطالب
+            msgsDiv.innerHTML += `<div class="bg-cyan-600 p-3 rounded-2xl rounded-tl-none self-end max-w-[85%] border border-cyan-500 text-white shadow-sm">${escapeHtml(msg)}</div>`;
+            input.value = '';
+            msgsDiv.scrollTop = msgsDiv.scrollHeight;
+
+            // جاري الكتابة...
+            const typingId = 'typing-' + Date.now();
+            msgsDiv.innerHTML += `<div id="${typingId}" class="bg-slate-800 p-3 rounded-2xl rounded-tr-none self-start max-w-[85%] border border-slate-700 text-slate-400 italic text-xs">شوكت بيفكر...</div>`;
+            msgsDiv.scrollTop = msgsDiv.scrollHeight;
+
+            try {
+                // مفتاح الـ API الخاص بك
+                const apiKey = 'AQ.Ab8RN6JFa33AeBIMlbH7rwUVr759U7ioa-uVjR5c0s_8gP-5'; 
+                
+                // شخصية شوكت وتعليماته
+                const systemPrompt = "أنت مساعد ذكي مصري اسمك 'شوكت' تعمل في منصة Kovex Tech لتقفيل منصات البرمجة والثقافة المالية للثانوية. أسعار أولى ثانوي: 35 جنيه لـ 21 فصل و 50 جنيه لـ 42 فصل. أسعار تانية ثانوي: 35 للثقافة المالية و 35 للبرمجة و 50 للاثنين معاً. مهمتك الرد على الطلاب بلطف وعامية مصرية مرحة. إذا سألوا عن طريقة الدفع، قل لهم يملأوا البيانات في الموقع ويرفعوا سكرين شوت التحويل. إذا سألوا عن الأمان طمأنهم أن التقفيل مضمون 100% PERFECT. إذا واجهوا مشكلة معقدة اطلب منهم يكلموا الدعم الفني على واتساب 01151806281. اختصر ردودك جداً وخليك عملي ومباشر.";
+                
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        contents: [{role: "user", parts: [{text: systemPrompt + "\n\nسؤال الطالب: " + msg}]}]
+                    })
+                });
+                
+                const data = await response.json();
+                const botReply = data.candidates[0].content.parts[0].text;
+                
+                document.getElementById(typingId).remove();
+                msgsDiv.innerHTML += `<div class="bg-slate-800 p-3 rounded-2xl rounded-tr-none self-start max-w-[85%] border border-slate-700 text-white shadow-sm leading-relaxed">${botReply.replace(/\n/g, '<br>')}</div>`;
+                msgsDiv.scrollTop = msgsDiv.scrollHeight;
+                
+            } catch(e) {
+                document.getElementById(typingId).remove();
+                msgsDiv.innerHTML += `<div class="bg-slate-800 p-3 rounded-2xl rounded-tr-none self-start max-w-[85%] border border-slate-700 text-rose-400">معلش يا بطل، السيستم عليه ضغط. تقدر تكلم الدعم على الواتساب 01151806281</div>`;
+            }
+        }
     </script>
 </body>
 </html>
